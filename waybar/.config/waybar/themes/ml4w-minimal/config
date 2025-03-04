@@ -45,18 +45,20 @@
 "clock"
     ],
 
+    
+
 // Modules Right    
     "modules-right": [
         "custom/updates",
         "pulseaudio",
 //"backlight",
-        "bluetooth",
         "backlight",
         "battery", 
-"network",
+// "network", // replaced by nm-applet
         // "group/hardware",
         "group/tools",
         "tray",
+         "bluetooth",  // replaced by blueman-applet
         "custom/notification",
         "custom/ml4w-welcome",
         "custom/exit"

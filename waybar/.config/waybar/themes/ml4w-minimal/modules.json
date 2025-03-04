@@ -50,7 +50,7 @@
 
     // Hyprland Window
     "hyprland/window": {
-        "format": " {class}",
+        "format": "{class}",
         "rewrite": {
             "(.*) - Brave": "$1",
             "(.*) - Chromium": "$1",
