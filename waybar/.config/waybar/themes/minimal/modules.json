@@ -52,6 +52,7 @@
     "hyprland/window": {
         "format": "{class}",
         "rewrite": {
+            "(.*) - Zen Browser": "Zen",
             "(.*) - Brave": "$1",
             "(.*) - Chromium": "$1",
             "(.*) - Brave Search": "$1",
@@ -60,19 +61,8 @@
         },
         "separate-outputs": false,
         "icon": true
-        // "icon": true,
-        // "icon-size": 18
     },
 
-      // ML4W Welcome App
-  "custom/ml4w-welcome": {
-    "on-click": "sleep 0.1 && ~/.config/ml4w/settings/ml4w-sidebar.sh",
-    "on-click-right": "sleep 0.1 && com.ml4w.welcome",
-    "format": " ",
-    "tooltip-format": "Open Sidebar"
-  },
-
-    // Tools
     "custom/tools": {
         "format": "",
         "tooltip-format": "Tools"
@@ -161,19 +151,6 @@
     "tooltip-format": "Open SideBar"
 },
 
-    // Browser Launcher
-    "custom/browser": {
-        "format": "",
-        "on-click": "zen-browser",
-        "tooltip-format": "Open Zen-Browser"
-    },    
-
-    // Deepseek Launcher
-    "custom/deepseek": {
-        "format":" ",
-        "on-click": "zen-browser --url=chat.deepseek.com",
-        "tooltip": false
-    },
 
     // // Rofi Application Launcher
     // "custom/appmenu": {
@@ -196,7 +173,7 @@
 
    // Rofi Application Launcher
    "custom/appmenuicon": {
-    "format": "",
+    "format": "<img>/home/incog/Downloads/386451_arch linux_archlinux_icon.svg</img>",
     "on-click": "sleep 0.2;rofi -show drun -replace",
     "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"

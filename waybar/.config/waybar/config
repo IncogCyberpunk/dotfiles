@@ -35,7 +35,7 @@
     
     // Modules Left
     "modules-left": [
-"custom/appmenuicon",
+	"custom/appmenuicon",
         "hyprland/workspaces",
     ],
 

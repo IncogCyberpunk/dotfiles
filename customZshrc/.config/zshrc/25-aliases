@@ -75,3 +75,9 @@ alias don1="hyprctl dispatch dpms on  HDMI-A-1"
 # Aliases to turn the laptop display on or off
 alias dof2="hyprctl dispatch dpms off  eDP-1"
 alias don2="hyprctl dispatch dpms on  eDP-1"
+
+# Aliases for zen browser
+alias zen='zen-browser --search'
+
+# Alias for killing hyprland
+alias killhyp='killall Hyprland'
