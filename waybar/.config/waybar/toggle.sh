@@ -7,9 +7,11 @@
 #            |___/ |___/                         |___/
 #
 
-if [ -f $HOME/.config/ml4w/settings/waybar-disabled ]; then
-    rm $HOME/.config/ml4w/settings/waybar-disabled
+if [ -f $HOME/.config/waybar/waybar-disabled ]; then
+    rm $HOME/.config/waybar/waybar-disabled
+    waybar &
+    exit
 else
-    touch $HOME/.config/ml4w/settings/waybar-disabled
+    touch $HOME/.config/waybar/waybar-disabled
 fi
 $HOME/.config/waybar/launch.sh &

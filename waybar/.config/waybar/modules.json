@@ -41,14 +41,31 @@
     }
   },
 
+  // Hyprland Window
+  "hyprland/window": {
+    "rewrite": {
+      "(.*) - Brave": "$1",
+      "(.*) - Chromium": "$1",
+      "(.*) - Brave Search": "$1",
+      "(.*) - Outlook": "$1",
+      "(.*) Microsoft Teams": "$1"
+    },
+    "separate-outputs": true
+  },
+
+  // ML4W Welcome App
+  "custom/ml4w-welcome": {
+    "on-click": "flatpak run com.ml4w.sidebar",
+    "format": " ",
+    "tooltip-format": "Open ML4W Sidebar App"
+  },
+
   // Empty
   "custom/empty": {
     "format": ""
   },
 
     // Tools
-
-    
   "custom/tools": {
     "format": "",
     "tooltip-format": "Tools"
@@ -70,7 +87,7 @@
     "return-type": "json",
     "exec": "~/.config/ml4w/scripts/updates.sh",
     "interval": 1800,
-    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+    "on-click": "~/.config/ml4w/settings/installupdates.sh",
     "on-click-right": "~/.config/ml4w/settings/software.sh"
   },
 
@@ -328,6 +345,19 @@
     "format-icons": [" ", " ", " ", " ", " "]
   },
 
+  // Power Profiles Daemon
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -346,7 +376,7 @@
       "car": " ",
       "default": ["", "", ""]
     },
-    "on-click": "pwvucontrol"
+    "on-click": "pavucontrol"
   },
 
   // Bluetooth
