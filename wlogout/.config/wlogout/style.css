@@ -10,11 +10,10 @@ button {
   border-style: solid;
   border-color: #33ccfe;
   border-width: 2px;
-  border-radius: 25%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25%;
-  margin: 10px;
+  margin: 20px;
     padding: 0;
     font-size: 30px;
     font-family : "Fira Code,Roboto";
