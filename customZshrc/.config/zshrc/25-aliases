@@ -81,3 +81,6 @@ alias zen='zen-browser --search'
 
 # Alias for killing hyprland
 alias killhyp='killall Hyprland'
+
+alias cp="cp -r"
+alias mkdir="mkdir -p"
