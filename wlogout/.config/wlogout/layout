@@ -3,12 +3,14 @@
     "action" : "hyprlock",
     "text" : "Lock",
     "keybind" : "l"
+    "circular" :true,
 }
 {
     "label" : "logout",
     "action" : "killall Hyprland || hyprctl dispatch exit || pkill Hyprland",
     "text" : "Logout",
     "keybind" : "o"
+    "circular" :true,
 }
 
 {
@@ -16,22 +18,26 @@
     "action" : "poweroff",
     "text" : "Shutdown",
     "keybind" : "s"
+    "circular" :true,
 }
 {
     "label" : "suspend",
     "action" : "systemctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
+    "circular" :true,
 }{
     "label" : "reboot",
     "action" : "reboot || systemctl reboot",
     "text" : "Reboot",
     "keybind" : "s"
+    "circular" :true,
 }
 {
     "label" : "hibernate",
     "action" : "systemctl hibernate",
     "text" : "Hibernate",
     "keybind" : "h"
+    "circular" :true,
 }
 
