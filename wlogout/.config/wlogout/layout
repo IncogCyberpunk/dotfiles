@@ -30,7 +30,7 @@
     "label" : "reboot",
     "action" : "reboot || systemctl reboot",
     "text" : "Reboot",
-    "keybind" : "s"
+    "keybind" : "r"
     "circular" :true,
 }
 {

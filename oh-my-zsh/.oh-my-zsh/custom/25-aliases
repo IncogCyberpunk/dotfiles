@@ -1,0 +1,53 @@
+# -----------------------------------------------------
+# ALIASES
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# General
+# -----------------------------------------------------
+alias c='clear'
+alias nf='fastfetch'
+alias pf='fastfetch'
+alias ff='fastfetch'
+alias ls='eza -a '
+alias ll='eza -al --icons=always'
+alias lt='eza -a --tree --level=1 --icons=always'
+alias shutdown='systemctl poweroff'
+alias v='$EDITOR'
+alias vim='$EDITOR'
+alias ts='~/.config/ml4w/scripts/snapshot.sh'
+alias wifi='nmtui'
+alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
+
+
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}'
+alias egrep='grep -E'
+alias fgrep='grep -F'
+
+# -----------------------------------------------------
+# System
+# -----------------------------------------------------
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
+
+# Git Aliases
+alias gis="git status"
+alias gia="git add ."
+alias gic="git commit -m"
+alias gip="git push origin -u main"
+
+# NPM Aliases
+alias ndev="npm run dev"
+
+# Aliases for zen browser
+alias zen='zen-browser --search'
+
+# Alias for killing hyprland
+alias killhyp='killall Hyprland'
+
+alias cp="cp -r"
+alias mkdir="mkdir -p"
+
+#Alias for opening pwvucontrol
+alias pwvucontrol="flatpak run com.saivert.pwvucontrol"
+alias sound="flatpak run com.saivert.pwvucontrol"
