@@ -7,5 +7,5 @@ source  ~/.config/zshrc/30-autostart
 
 source  ~/.config/zshrc/additionalFeatures.zsh
 source  ~/.config/zshrc/paths.zsh
-
+source ~/.config/zshrc/plugins.zsh
 
