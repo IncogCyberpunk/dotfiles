@@ -5,9 +5,8 @@
 #                /___/  
 #
 # Configuration
-#font_family                Fira Code Regular 
-#font_features FiraCode-Regular +ss01 +ss02 +ss03 +ss04 +ss05 +ss07 +ss08 +zero +onum
-#font_size	                12
+font_family                Fira Code  
+font_size	                12
 #bold_font                   auto
 #italic_font                 auto
 #bold_italic_font            auto
@@ -26,13 +25,6 @@ background_opacity          0.4
 confirm_os_window_close     0
 #selection_foreground        none
 #selection_background        none
-
-# Additional Stylings
-tab_bar_min_tabs            1
-tab_bar_edge                bottom
-tab_bar_style               powerline
-tab_powerline_style         slanted
-tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
 
 
 # Include Custom Configuration
@@ -125,10 +117,9 @@ color7  #bac2de
 color15 #a6adc8
 
 
-
-# BEGIN_KITTY_FONTS
-font_family      family='Fira Code' postscript_name=FiraCode-Regular
-bold_font        auto
-italic_font      family='Fira Code' style=Regular features='+ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08 +ss09 +ss10 +zero +onum'
-bold_italic_font auto
-# END_KITTY_FONTS
+# Additional Stylings
+tab_bar_min_tabs            1
+tab_bar_edge                bottom
+tab_bar_style               powerline
+tab_powerline_style         slanted
+tab_title_template          {title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}
