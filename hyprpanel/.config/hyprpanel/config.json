@@ -1,3 +1,26 @@
 {
-  "bar.customModules.updates.pollingInterval": 21600000
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "theme.bar.floating": false,
+  "theme.bar.buttons.y_margins": "0.3em",
+  "theme.bar.outer_spacing": "0.2em",
+  "bar.battery.label": true,
+  "theme.bar.buttons.battery.enableBorder": false,
+  "bar.battery.hideLabelWhenFull": false,
+  "menus.media.noMediaText": "",
+  "menus.clock.time.military": true,
+  "menus.clock.time.hideSeconds": true,
+  "menus.power.lowBatteryThreshold": 40,
+  "menus.power.logout": "hyprctl dispatch exit || killall Hyprland",
+  "theme.bar.buttons.modules.ram.enableBorder": false,
+  "menus.media.hideAuthor": false,
+  "menus.media.displayTimeTooltip": true,
+  "theme.bar.buttons.notifications.enableBorder": false,
+  "theme.bar.buttons.media.enableBorder": false,
+  "bar.media.show_active_only": true,
+  "bar.clock.format": "%a %b %d  %I:%M %p",
+  "bar.clock.showTime": true,
+  "bar.clock.showIcon": true,
+  "bar.systray.ignore": {},
+  "theme.bar.buttons.systray.enableBorder": false,
+  "menus.clock.weather.location": "44600"
 }
