@@ -1,11 +1,18 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 setopt interactivecomments
+
+# SETUP ZOXIDE (-- the better cd --)
+# Environment variables that sets up the database for zoxide
+_ZO_DATA_DIR=/home/incog/.zoxideDB/
+# Initialize zoxide 
+eval "$(zoxide init --cmd cd zsh)"
+
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+# Use thefuck package for correcting last console command
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias fk)
 
 #source  ~/.config/zshrc/00-init
 #source  ~/.config/zshrc/20-customization
@@ -16,8 +23,6 @@ source  ~/.config/zshrc/additionalFeatures.zsh
 source  ~/.config/zshrc/paths.zsh
 source  ~/.config/zshrc/fzfCatppuccin.zsh
 
-source ~/.config/zshrc/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#Initialize oh-my-posh
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.toml)"
 
