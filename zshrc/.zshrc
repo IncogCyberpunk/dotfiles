@@ -44,5 +44,3 @@ source  ~/.config/zshrc/fzfCatppuccin.zsh
 #Initialize oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.toml)"
 
-# Being redirected to random directory so i guess
-cd ~
