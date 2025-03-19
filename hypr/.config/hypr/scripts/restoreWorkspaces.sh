@@ -14,4 +14,4 @@ sleep 1
 hyprctl dispatch workspace 1
 sleep 1
 
-notify-send "Restored Hyprland config on workspace 3."
+notify-send "Restored Hyprland config and init.lua"
