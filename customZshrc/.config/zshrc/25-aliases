@@ -6,8 +6,7 @@
 # General
 # -----------------------------------------------------
 alias c='clear'
-alias nf='fastfetch'
-alias pf='fastfetch'
+alias pf='pfetch'
 alias ff='fastfetch'
 alias ls='eza -a '
 alias ll='eza -al --icons=always'
@@ -15,9 +14,7 @@ alias lt='eza -a --tree --level=1 --icons=always'
 alias shutdown='systemctl poweroff'
 alias v='$EDITOR'
 alias vim='$EDITOR'
-alias ts='~/.config/ml4w/scripts/snapshot.sh'
 alias wifi='nmtui'
-alias cleanup='~/.config/ml4w/scripts/cleanup.sh'
 
 
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}'
@@ -38,16 +35,20 @@ alias gip="git push origin -u main"
 
 # NPM Aliases
 alias ndev="npm run dev"
+alias nser="npm run server"
 
 # Aliases for zen browser
 alias zen='zen-browser --search'
 
 # Alias for killing hyprland
-alias killhyp='killall Hyprland'
+alias killhyp='killall Hyprland || pkill Hyprland'
 
-alias cp="cp -r"
+# Alias the currently using cp and mkdir 
+alias cp="cp -r" # Alias `cp` to `cp -r` to avoid having to remember using -r flag while copying directories 
 alias mkdir="mkdir -p"
 
-#Alias for opening pwvucontrol
-alias pwvucontrol="flatpak run com.saivert.pwvucontrol"
-alias sound="flatpak run com.saivert.pwvucontrol"
+#Alias for opening pavucontrol
+alias sound="pavucontrol"
+
+# Alias for opening yazi
+alias y="yazi"

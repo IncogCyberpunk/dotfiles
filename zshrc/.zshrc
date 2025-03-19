@@ -1,3 +1,7 @@
+# Enable VI keybindings in zsh instead of EMACS (default) keybindings
+bindkey -v # bindkey -e (default)
+
+# Allow comments 
 setopt interactivecomments
 
 # SETUP ZOXIDE (-- the better cd --)
@@ -14,8 +18,12 @@ eval $(thefuck --alias)
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias fk)
 
-#source  ~/.config/zshrc/00-init
-#source  ~/.config/zshrc/20-customization
+## case insensitive path-completion
+autoload -Uz +X compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' menu select
+
+source  ~/.config/zshrc/init
 source  ~/.config/zshrc/25-aliases
 source  ~/.config/zshrc/30-autostart
 
