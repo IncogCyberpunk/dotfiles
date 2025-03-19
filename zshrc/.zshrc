@@ -1,6 +1,8 @@
 # Enable VI keybindings in zsh instead of EMACS (default) keybindings
 bindkey -v # bindkey -e (default)
 
+export EDITOR=nvim
+
 # Allow comments 
 setopt interactivecomments
 
@@ -9,6 +11,7 @@ setopt interactivecomments
 _ZO_DATA_DIR=/home/incog/.zoxideDB/
 # Initialize zoxide 
 eval "$(zoxide init --cmd cd zsh)"
+
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -23,14 +26,23 @@ autoload -Uz +X compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
-source  ~/.config/zshrc/init
-source  ~/.config/zshrc/25-aliases
-source  ~/.config/zshrc/30-autostart
+#function y() {
+#	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+#	yazi "$@" --cwd-file="$tmp"
+#	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+#		builtin cd -- "$cwd"
+#	fi
+#	rm -f -- "$tmp"
+#}
+
+source  ~/.config/zshrc/aliases
+source  ~/.config/zshrc/autostart
 
 source  ~/.config/zshrc/additionalFeatures.zsh
-source  ~/.config/zshrc/paths.zsh
 source  ~/.config/zshrc/fzfCatppuccin.zsh
 
 #Initialize oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.toml)"
 
+# Being redirected to random directory so i guess
+cd ~
