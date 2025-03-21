@@ -8,14 +8,14 @@
 alias c='clear'
 alias pf='pfetch'
 alias ff='fastfetch'
-alias ls='eza -a '
+alias ls="eza --oneline --all"
 alias ll='eza -al --icons=always'
 alias lt='eza -a --tree --level=1 --icons=always'
 alias n='$EDITOR'
 alias vim='$EDITOR'
 alias wifi='nmtui'
-alias ...='../../'
-alias ....='../../../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}'
 alias egrep='grep -E'
@@ -24,7 +24,19 @@ alias fgrep='grep -F'
 # -----------------------------------------------------
 # System
 # -----------------------------------------------------
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias -g update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' # -g flag to make the alias global i.e. for all users
+
+# -----------------------------------------------------
+# Mount
+# -----------------------------------------------------
+alias mount='sudo mount'
+alias umount='sudo umount'
+
+alias mextra='sudo mount /dev/sda1 /mnt/Extras'
+alias miso='sudo mount /dev/sdb1 /mnt/Aayush-32'
+
+alias uextra='sudo umount  /mnt/Extras'
+alias uiso='sudo umount /mnt/Aayush-32'
 
 
 # Git Aliases
