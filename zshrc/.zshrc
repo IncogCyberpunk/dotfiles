@@ -20,7 +20,6 @@ setopt SHARE_HISTORY
 # Initialize zoxide 
 eval "$(zoxide init --cmd cd zsh)"
 
-
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
@@ -46,7 +45,6 @@ function y() {
 
 source  ~/.config/zshrc/aliases
 source  ~/.config/zshrc/autostart
-
 source  ~/.config/zshrc/additionalFeatures.zsh
 source  ~/.config/zshrc/fzfCatppuccin.zsh
 
