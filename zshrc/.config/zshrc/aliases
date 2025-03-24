@@ -65,3 +65,8 @@ alias sound="pavucontrol"
 #Yt-dlp aliases
 alias ytdlpmusic="yt-dlp --extract-audio --audio-format mp3 --audio-quality 0"
 
+# -----------------------------------------------------
+# Fzf 
+# -----------------------------------------------------
+alias spkg="pacman -Qq | fzf -m" # Search installed pkg using fzf
+alias rpkg='sudo pacman -Rns $(pacman -Qq | fzf)' # Search pkg using fzf with -m flag to select mutliple pkgs and remove it 
