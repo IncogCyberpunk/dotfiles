@@ -2,7 +2,8 @@
 bindkey -v # bindkey -e (default)
 
 export EDITOR=nvim
-export QT_QPA_PLATFORMTHEME=qt5ct 
+export QT_SElECT=6
+export QT_QPA_PLATFORMTHEME=qt6ct
 # Allow comments 
 setopt interactivecomments
 
