@@ -70,3 +70,6 @@ alias ytdlpmusic="yt-dlp --extract-audio --audio-format mp3 --audio-quality 0"
 # -----------------------------------------------------
 alias spkg="pacman -Qq | fzf -m" # Search installed pkg using fzf
 alias rpkg='sudo pacman -Rns $(pacman -Qq | fzf)' # Search pkg using fzf with -m flag to select mutliple pkgs and remove it 
+#
+     
+alias rfile='rm -ri "$(fzf -m)"'

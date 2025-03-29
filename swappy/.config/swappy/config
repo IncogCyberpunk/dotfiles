@@ -2,7 +2,7 @@
 
 save_dir=$HOME/Pictures/Screenshots/
 save_filename_format=ss-%Y%m%d-%H%M%S.png
-show_panel=false #Decides if the panel is to be shown or not on startup of swappy
+show_panel=true 
 line_size=5
 text_size=20
 text_font=sans-serif
