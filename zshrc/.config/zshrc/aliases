@@ -6,7 +6,6 @@
 # General
 # -----------------------------------------------------
 alias c='clear'
-alias pf='pfetch'
 alias ff='fastfetch'
 alias ls="eza --oneline --all"
 alias ll='eza -al --icons=always'
@@ -14,8 +13,8 @@ alias lt='eza -a --tree --level=1 --icons=always'
 alias n='$EDITOR'
 alias vim='$EDITOR'
 alias wifi='nmtui'
-alias ...='../../'
-alias ....='../../../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 
 alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}'
 alias egrep='grep -E'

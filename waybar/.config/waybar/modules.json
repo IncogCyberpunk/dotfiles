@@ -43,15 +43,12 @@
 
   // Hyprland Window
   "hyprland/window": {
-    "format": "{class}",
+    "format": "{initialTitle}",
     "icon": true,
     "max-length": 60,
     "rewrite": {
-      "(.*) — Zen Browser": "Zen",
-      "(.*) - Chromium": "$1",
-      "(.*) - Brave Search": "$1",
-      "(.*) - Outlook": "$1",
-      "(.*) Microsoft Teams": "$1"
+      "Zen Browser": "Zen",
+      "kitty":"Kitty",
     },
     "separate-outputs": true
   },
@@ -159,7 +156,7 @@
   // Power Menu
   "custom/exit": {
     "format": "",
-    "on-click": "~/.config/ml4w/scripts/wlogout.sh",
+    "on-click": "wlogout -s",
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
   },
@@ -229,7 +226,7 @@
   // Clock
   "clock": {
     "format": "{:%H:%M %a}",
-    "on-click": "flatpak run com.ml4w.calendar",
+    "on-click": "kitty cal",
     "timezone": "",
     "tooltip": false
   },
@@ -291,29 +288,6 @@
     ]
   },
 
-  // Group Links
-  "group/links": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/chatgpt",
-      "custom/empty"
-    ]
-  },
-
-  // Group Settings
-  "group/settings": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 300,
-      "children-class": "not-memory",
-      "transition-left-to-right": true
-    },
-    "modules": [
-      "custom/settings",
-      "custom/waybarthemes",
-      "custom/wallpaper"
-    ]
-  },
 
   // Network
   "network": {
@@ -322,12 +296,12 @@
     "format-ethernet": "  {ifname}",
     "format-disconnected": "Disconnected ⚠",
     "tooltip-format": " {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+    "tooltip-format-wifi": "  {essid}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "~/.config/ml4w/settings/networkmanager.sh",
-    "on-click-right": "~/.config/ml4w/scripts/nm-applet.sh toggle",
+    "on-click": "kitty --title 'Network-Manager' -e nmtui ",
+    "on-click-right": "",
   },
 
   // Battery
@@ -362,12 +336,12 @@
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format": "{icon} {volume}% | {format_source}",
+    "format-bluetooth": " {volume}% | {format_source}",
+    "format-bluetooth-muted": " 0% {format_source}",
+    "format-muted": "  0% {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "  0%",
     "format-icons": {
       "headphone": " ",
       "hands-free": " ",

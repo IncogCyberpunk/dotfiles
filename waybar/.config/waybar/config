@@ -21,40 +21,17 @@
     ],
 
 
-    // Pulseaudio
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon}   {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-        "headphone": " ",
-        "hands-free": " ",
-        "headset": " ",
-        "phone": " ",
-        "portable": " ",
-        "car": " ",
-        "default": [" ", " ", " "]
-        },
-        "on-click": "pavucontrol"
-    },
 
     // Modules Left
     "modules-left": [
         "custom/appmenuicon",
         "hyprland/workspaces",
-        "group/links",
-        "group/quicklinks",
-        "custom/empty"
     ],
 
     // Modules Center
     "modules-center": [
         "hyprland/window",
-        "custom/empty"
+        "clock",
     ],
 
     // Modules Right    
@@ -66,12 +43,9 @@
         "network",
         "battery", 
         "power-profiles-daemon",
-        "group/hardware",
         "group/tools",
-        "custom/exit",
-        "clock",
         "tray",
         "custom/notification",
-        "custom/ml4w-welcome"
+        "custom/exit",
     ]
 }
