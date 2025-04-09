@@ -205,28 +205,6 @@ window#waybar.empty #window {
     padding-right: 23px;
 }
 
-#custom-waybarthemes,#custom-system {
-    margin-right:15px;
-}
-
-
-#custom-ml4w-welcome {
-    margin-right: 12px;
-    background-image: url("../assets/ml4w-icon.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-right: 20px;
-}
-
-#custom-ml4w-hyprland-settings {
-    margin-right: 12px;
-    background-image: url("../assets/hyprland-icon-20.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    padding-right: 16px;
-}
-
 
 /* -----------------------------------------------------
  * Idle Inhibator
@@ -366,6 +344,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
  #pulseaudio {
+    min-width: 50px;
     font-size: 14px;
     color: @textcolor;
     border-radius: 15px;

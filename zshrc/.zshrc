@@ -44,6 +44,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+source ~/.config/zshrc/paths.zsh
 source  ~/.config/zshrc/aliases
 source  ~/.config/zshrc/autostart
 source  ~/.config/zshrc/additionalFeatures.zsh
