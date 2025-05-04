@@ -11,7 +11,7 @@
     "on-scroll-up": "hyprctl dispatch workspace r-1",
     "on-scroll-down": "hyprctl dispatch workspace r+1",
     "on-click": "activate",
-    "active-only": false,
+    "active-only": true,
     "all-outputs": true,
     "format": "{}",
     "format-icons": {
@@ -20,8 +20,9 @@
       "default": ""
     },
     "persistent-workspaces": {
-      "*": 5
-    }
+             "*": 5, // 5 workspaces by default on every monitor
+             "HDMI-A-1": [1,2,3,4,5] // but only three on HDMI-A-1
+       }
   },
 
   // Taskbar
