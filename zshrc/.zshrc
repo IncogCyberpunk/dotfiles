@@ -19,7 +19,7 @@ setopt SHARE_HISTORY
 # SETUP ZOXIDE (-- the better cd --)
 # Environment variables that sets up the database for zoxide
 # Initialize zoxide 
-# eval "$(zoxide init --cmd cd zsh)"
+ eval "$(zoxide init --cmd cd zsh)"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
@@ -35,14 +35,14 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
 # Make sure zsh is at the directory u were last in while using yazi
-# function y() {
-# 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-# 	yazi "$@" --cwd-file="$tmp"
-# 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-# 		builtin cd -- "$cwd"
-# 	fi
-# 	rm -f -- "$tmp"
-# }
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 source ~/.config/zshrc/paths.zsh
 source  ~/.config/zshrc/aliases
@@ -58,3 +58,5 @@ source ~/.config/zshrc/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Always source zsh-syntax-highlighting at end of .zshrc (A rule of thumb)
 source ~/.config/zshrc/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+cd ~

@@ -21,7 +21,7 @@
     },
     "persistent-workspaces": {
              "*": 5, // 5 workspaces by default on every monitor
-             "HDMI-A-1": [1,2,3,4,5] // but only three on HDMI-A-1
+             "HDMI-A-1": [1,2,3,4,5] 
        }
   },
 
@@ -114,14 +114,6 @@
     "on-click": "~/.config/hypr/scripts/keybindings.sh",
     "tooltip": false
   },
-
-  // ChatGPT Launcher
-  "custom/chatgpt": {
-    "format": " ",
-    "on-click": "~/.config/ml4w/settings/ai.sh",
-    "tooltip-format": "AI Support"
-  },
-
   // Calculator
   "custom/calculator": {
     "format": "",
@@ -289,6 +281,23 @@
     ]
   },
 
+
+  // Customize the system tray
+  "system_tray": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/tools",
+      "custom/cliphist",
+      "custom/hypridle",
+      "custom/hyprshade",
+      "nm-applet"
+    ]
+  },
 
   // Network
   "network": {

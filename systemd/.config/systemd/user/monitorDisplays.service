@@ -1,0 +1,14 @@
+[Unit]
+Description= Service to check if all the displays are disabled and if yes, enable the laptop's display
+; After=graphical-session.target
+
+[Service]
+Type= simple
+ExecStart= /home/incog/.config/hypr/scripts/monitorDisplays.sh
+
+[Install]
+WantedBy=graphical-sesion.target
+
+
+
+
