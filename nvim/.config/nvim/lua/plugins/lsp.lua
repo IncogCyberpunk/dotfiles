@@ -160,6 +160,7 @@ return {
       ts_ls = {},
       cssls = {},
         tailwindcss = {},
+      jsonls = {},
         lua_ls = {
 
           -- cmd = { ... },
