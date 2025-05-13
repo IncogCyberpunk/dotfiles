@@ -1,5 +1,6 @@
 return {
   'nvimtools/none-ls.nvim',
+  enabled = false,
   dependencies = {
     'nvimtools/none-ls-extras.nvim',
     'jayp0521/mason-null-ls.nvim', -- ensure dependencies are installed
