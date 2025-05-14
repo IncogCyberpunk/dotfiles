@@ -38,7 +38,7 @@
     "modules-right": [
         "custom/updates",
         "pulseaudio",
-        //"backlight",
+        "backlight",
         //"network",
         "battery", 
         "power-profiles-daemon",

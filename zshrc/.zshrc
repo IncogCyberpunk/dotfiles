@@ -10,8 +10,8 @@ setopt interactivecomments
 ## CONFIGURE HISTORY IN ZSH
 HISTFILE=~/.zsh_history # ~/.zsh_history created if doesn't exist
 # How many commands to store in history
-HISTSIZE=10000 #Sets the number of commands stored in memory (RAM) during a session
-SAVEHIST=10000 #Sets the number of commands saved to HISTFILE when the session ends.
+HISTSIZE=100000 #Sets the number of commands stored in memory (RAM) during a session
+SAVEHIST=100000 #Sets the number of commands saved to HISTFILE when the session ends.
 
 # Share history in every terminal session
 setopt SHARE_HISTORY

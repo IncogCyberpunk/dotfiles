@@ -28,13 +28,14 @@
  * ----------------------------------------------------- */
 
 * {
-    font-family: "Fira Sans semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: bold;
     border: none;
     border-radius: 0px;
 }
 
 window#waybar {
-    background-color: rgba(0,0,0,0.8);
+    background-color: #151E3D;
     border-bottom: 0px solid #ffffff;
     /* color: #FFFFFF; */
     transition-property: background-color;
@@ -66,6 +67,7 @@ window#waybar {
 
 #workspaces button.active {
     color: @textcolor1;
+        border-radius: 90px;
     background: @workspacesbackground2;
 }
 

@@ -62,7 +62,7 @@
 
     // Tools
   "custom/tools": {
-    "format": "",
+    "format": "",
     "tooltip-format": "Tools"
   },
 
@@ -332,13 +332,13 @@
 
   // Power Profiles Daemon
   "power-profiles-daemon": {
-    "format": "{icon}",
+    "format": "{icon} ",
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
       "default": "",
       "performance": "",
-      "balanced": "",
+      "balanced": "",
       "power-saver": ""
     }
   },
@@ -346,12 +346,12 @@
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {volume}% | {format_source}",
+    "format": "{icon}    {volume}% | {format_source}",
     "format-bluetooth": " {volume}% | {format_source}",
     "format-bluetooth-muted": " 0% {format_source}",
     "format-muted": "  0% {format_source}",
     "format-source": " {volume}%",
-    "format-source-muted": "  0%",
+    "format-source-muted": "   0%",
     "format-icons": {
       "headphone": " ",
       "hands-free": " ",
@@ -380,8 +380,7 @@
     "interval": 60,
     "icon": false
   },
-
-  // backlight:
+// backlight:
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": [
@@ -402,5 +401,4 @@
       ""
     ],
     "scroll-step": 1
-  }
-}
+  }}
