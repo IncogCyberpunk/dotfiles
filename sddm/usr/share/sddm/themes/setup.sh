@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## Keyitdev https://github.com/Keyitdev/sddm-astronaut-theme
+## Copyright (C) 2022-2025 Keyitdev
+## Distributed under the GPLv3+ License https://www.gnu.org/licenses/gpl-3.0.html
 
 red='\033[0;31m'
 green='\033[0;32m'

@@ -161,6 +161,7 @@ return {
       cssls = {},
         tailwindcss = {},
       jsonls = {},
+      hyprls={},
         lua_ls = {
 
           -- cmd = { ... },
