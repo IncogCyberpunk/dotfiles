@@ -6,3 +6,6 @@ bindkey 'Up'    ""
 bindkey 'Down'  ""
 bindkey 'Left'  ""
 bindkey 'Right' ""
+
+bindkey -M viins -r '^J' 
+bindkey -M vicmd -r '^J' 
