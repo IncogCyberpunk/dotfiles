@@ -1,0 +1,29 @@
+#/usr/bin/env bash
+
+## RUN ALL THE ABOVE COMMANDS ENCLOSED INSIDE -c (I.E. SINGLE LINE COMMAND) USING " "
+wezterm start -- zsh -c '
+
+# NOTE: If the backslash appears at the end of a line (with no characters, including spaces, after it), it tells the shell to ignore the newline character that follows, effectively continuing the command onto the next line. 
+# NOTE: \; => used to perform command chaining in tmux
+
+# Create a session for all the different configs 
+tmux new -d -s Configs -n NvimConfigs "nvim ~/.config/nvim/" \; \
+    neww -n HyprConfigs "nvim ~/.config/hypr/" \;  \
+    neww -n TmuxConfigs "nvim ~/.config/tmux/" \; \
+    neww -n WeztermConfigs "nvim ~/.config/wezterm/";
+
+# Create a session for the Next.js project 
+tmux new -d -s next\.js -n nextApp "nvim /mnt/Aayush/WEB/NEXT.JS/" \; \
+    neww -n ForServer \; \
+    send-keys "cd /mnt/Aayush/WEB/NEXT.JS/ && clear" Enter \;
+
+# Attach to the `configs` session 
+tmux a -t Configs \; select-window -t 1 \;
+
+'
+
+sleep 0.1
+# NOTE: movetoworkspacesilent => moves to workspace without focusing on the workspace where the  window has been moved to 
+hyprctl dispatch movetoworkspacesilent 3
+
+
