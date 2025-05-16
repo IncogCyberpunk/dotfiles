@@ -44,19 +44,27 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-source ~/.config/zshrc/paths.zsh
-source  ~/.config/zshrc/aliases
-source  ~/.config/zshrc/autostart
-source  ~/.config/zshrc/additionalFeatures.zsh
-source  ~/.config/zshrc/fzfCatppuccin.zsh
+# Source the config files for zsh 
+for file in $HOME/dotfiles/zshrc/.config/zshrc/*; do
+	if [[ -f "$file" ]]; then
+		source "$file"
+	fi
+done
+
+# Source the plugins for zsh 
+for file in $HOME/dotfiles/zshrc/.config/zshrc/plugins/*; do
+	if [[ -f "$file" ]]; then
+		source "$file"
+	fi
+done
 
 #Initialize oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.toml)"
 
-#Source zsh-autosuggestions 
+# #Source zsh-autosuggestions 
 source ~/.config/zshrc/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Always source zsh-syntax-highlighting at end of .zshrc (A rule of thumb)
+#
+# # Always source zsh-syntax-highlighting at end of .zshrc (A rule of thumb)
 source ~/.config/zshrc/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 cd ~
