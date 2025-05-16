@@ -13,6 +13,7 @@ config.initial_rows = 28
 -- or, changing the font size and color scheme.
 config.font_size = 10
 config.color_scheme = 'Catppuccin Mocha'
+config.max_fps = 120
 
 config.hide_tab_bar_if_only_one_tab = true
 config.max_fps = 120
