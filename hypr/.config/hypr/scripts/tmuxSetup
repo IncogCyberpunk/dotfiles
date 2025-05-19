@@ -3,7 +3,7 @@
 ## RUN ALL THE ABOVE COMMANDS ENCLOSED INSIDE -c (I.E. SINGLE LINE COMMAND) USING " "
 wezterm start -- zsh -c '
 
-# NOTE: If the backslash appears at the end of a line (with no characters, including spaces, after it), it tells the shell to ignore the newline character that follows, effectively continuing the command onto the next line. 
+# NOTE: If the backslash appears at the end of a line (with no characters, including no spaces, after it), it tells the shell to ignore the newline character that follows, effectively continuing the command onto the next line. 
 # NOTE: \; => used to perform command chaining in tmux
 
 # Create a session for all the different configs 
