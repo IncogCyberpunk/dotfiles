@@ -81,7 +81,7 @@ return {
     local builtin = require 'telescope.builtin'
     vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
-    vim.keymap.set('n', '<leader>rg', builtin.registers, { desc = 'List the registers' })
+    vim.keymap.set('n', '<leader>re', builtin.registers, { desc = 'List the registers' })
     vim.keymap.set('n', '<leader>kt', builtin.colorscheme, { desc = 'Change Themes' })
     vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
