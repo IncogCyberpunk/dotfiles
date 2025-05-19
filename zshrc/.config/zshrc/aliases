@@ -72,3 +72,6 @@ alias rpkg='sudo pacman -Rns $(pacman -Qq | fzf)' # Search pkg using fzf with -m
 #
      
 alias rfile='rm -ri "$(fzf -m)"'
+
+# Zoxide Aliases
+alias cde="zoxide edit"
