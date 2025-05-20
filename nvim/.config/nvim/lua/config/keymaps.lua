@@ -77,3 +77,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- Keymap to copy and paste to system clipboard
 vim.keymap.set('n', '<leader>pr','"+', { desc = 'Use the [P]lus [R]egister i.e. system clipboard' })
+
+-- Undo all changes to the file and revert to the last write state to the file
+vim.keymap.set('n','<leader>ud',":e!<CR>", { desc = "Undo all changes to the file since the last write."})
