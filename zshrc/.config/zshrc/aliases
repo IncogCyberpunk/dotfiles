@@ -24,6 +24,7 @@ alias fgrep='grep -F'
 # System
 # -----------------------------------------------------
 alias -g update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' # -g flag to make the alias global i.e. for all users
+alias sit="sudoedit"
 
 # -----------------------------------------------------
 # Mount

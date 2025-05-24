@@ -97,7 +97,8 @@ enable_sddm(){
 
 while true; do
     clear
-    echo -e "${green}[*] Choose one of the options below.${no_color}"
+    echo -e "${green}sddm-astronaut-theme made by Keyitdev${no_color}"
+    echo -e "${green}[*] Choose option.${no_color}"
     echo -e "1. All of the below."
     echo -e "2. Install dependencies with package manager."
     echo -e "3. Clone theme from github.com to $path_to_git_clone."
