@@ -1,6 +1,7 @@
 #/usr/bin/env bash
 
 ## RUN ALL THE ABOVE COMMANDS ENCLOSED INSIDE -c (I.E. SINGLE LINE COMMAND) USING " "
+# NOTE: start of the command
 wezterm start -- zsh -c '
 
 # NOTE: If the backslash appears at the end of a line (with no characters, including no spaces, after it), it tells the shell to ignore the newline character that follows, effectively continuing the command onto the next line. 
@@ -20,6 +21,7 @@ tmux new -d -s next\.js -n nextApp "nvim /mnt/Aayush/WEB/NEXT.JS/" \; \
 # Attach to the `configs` session 
 tmux a -t Configs \; select-window -t 1 \;
 
+# End of the command
 '
 
 sleep 0.1

@@ -5,7 +5,6 @@
 # -----------------------------------------------------
 # General
 # -----------------------------------------------------
-alias c='clear'
 alias ff='fastfetch'
 alias ls="eza --oneline --all"
 alias ll='eza -al --icons=always'
@@ -35,9 +34,8 @@ alias umount='sudo umount'
 # Mounting this way doesn't require specifying the filesystem if defined in /etc/fstab  
 alias mall='sudo mount -a'
 
-alias uext='sudo umount  /mnt/Extras'
-alias uiso='sudo umount /mnt/'
-alias uall='sudo umount /mnt/Isos /mnt/Extras'
+# Reflector Alias to sort mirrors from Nepal and India and sort them by rate and save them to /etc/pacman.d/mirrorlist
+alias rsort='sudo reflector --sort rate --country Nepal,India --save /etc/pacman.d/mirrorlist'
 
 # Git Aliases
 alias gis="git status"
