@@ -17,7 +17,7 @@ vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 -- quit file
 vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', opts)
 
--- delete single character without copying into register
+-- delete single character without copying into register by making use of the black hole register
 vim.keymap.set('n', 'x', '"_x', opts)
 
 -- Vertical scroll and center

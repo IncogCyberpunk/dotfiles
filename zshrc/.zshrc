@@ -64,7 +64,10 @@ eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.toml)"
 # #Source zsh-autosuggestions 
 source ~/.config/zshrc/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #
-# # Always source zsh-syntax-highlighting at end of .zshrc (A rule of thumb)
-source ~/.config/zshrc/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-cd ~
+# TODO: Fix the keybinds that are colliding with my defined keybinds
+# Source zsh-vi-mode plugin
+# source ~/.config/zshrc/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+# NOTE:  Always source zsh-syntax-highlighting at end of .zshrc (A rule of thumb)
+source ~/.config/zshrc/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
