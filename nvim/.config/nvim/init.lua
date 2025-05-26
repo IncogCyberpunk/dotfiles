@@ -34,7 +34,7 @@ vim.opt.runtimepath:prepend(lazypath)
 --   require  'plugins.comment',
 -- }
 
--- Better way to modularize 
+-- Better way to modularize the plugins by placing them inside folder called plugins inside the lua directory 
 require('lazy').setup('plugins')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
