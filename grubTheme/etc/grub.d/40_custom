@@ -7,7 +7,7 @@ exec tail -n +3 $0
 # Menu Entry for Shutdown
 menuentry "Shutdown" {
 	echo "System shutting down..."
-	poweroff
+	halt
 }
 
 # Menu Entry for Reboot
