@@ -61,9 +61,11 @@ done
 #Initialize oh-my-posh
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.toml)"
 
-# #Source zsh-autosuggestions 
+# Source zsh-autosuggestions 
 source ~/.config/zshrc/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-#
+
+# Source zsh-autopair
+source ~/.config/zshrc/plugins/zsh-autopair/autopair.zsh
 
 # TODO: Fix the keybinds that are colliding with my defined keybinds
 # Source zsh-vi-mode plugin
