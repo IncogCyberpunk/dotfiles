@@ -1,6 +1,6 @@
 #/usr/bin/env bash
 
-## RUN ALL THE ABOVE COMMANDS ENCLOSED INSIDE -c (I.E. SINGLE LINE COMMAND) USING " "
+## RUN ALL THE BELOW COMMANDS ENCLOSED INSIDE -c in zsh (I.E. SINGLE LINE COMMAND) USING " "
 # NOTE: start of the command
 wezterm start -- zsh -c '
 
@@ -14,18 +14,12 @@ tmux new -d -s Configs -n NvimConfigs "nvim ~/.config/nvim/" \; \
     neww -n WeztermConfigs "nvim ~/.config/wezterm/";
 
 # Create a session for the Next.js project 
-tmux new -d -s next\.js -n nextApp "nvim /mnt/Aayush/WEB/NEXT.JS/" \; \
+tmux new -d -s next\.js -n nextApp "nvim /mnt/WEB/NEXT.JS/" \; \
     neww -n ForServer \; \
-    send-keys "cd /mnt/Aayush/WEB/NEXT.JS/ && clear" Enter \;
+    send-keys "cd /mnt/WEB/NEXT.JS/ && clear" Enter \;
 
 # Attach to the `configs` session 
-tmux a -t Configs \; select-window -t 1 \;
-
-# End of the command
+tmux a -t Configs \; \
+select-window -t 1 \; \
+neww \; send-keys "hyprctl dispatch movetoworkspacesilent 3 && exit" Enter \;
 '
-
-sleep 0.1
-# NOTE: movetoworkspacesilent => moves to workspace without focusing on the workspace where the  window has been moved to 
-hyprctl dispatch movetoworkspacesilent 3
-
-
