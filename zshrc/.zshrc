@@ -71,3 +71,4 @@ source ~/.config/zshrc/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # NOTE:  Always source zsh-syntax-highlighting at end of .zshrc (A rule of thumb)
 source ~/.config/zshrc/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
