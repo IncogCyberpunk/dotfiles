@@ -1,6 +1,6 @@
 #/usr/bin/env bash
 
-## RUN ALL THE BELOW COMMANDS ENCLOSED INSIDE -c in zsh (I.E. SINGLE LINE COMMAND) USING " "
+# NOTE: RUN ALL THE BELOW COMMANDS ENCLOSED INSIDE -c in zsh (I.E. SINGLE LINE COMMAND) USING wezterm --start -- zsh -c " "
 # NOTE: start of the command
 wezterm start -- zsh -c '
 
@@ -21,5 +21,8 @@ tmux new -d -s next\.js -n nextApp "nvim /mnt/WEB/NEXT.JS/" \; \
 # Attach to the `configs` session 
 tmux a -t Configs \; \
 select-window -t 1 \; \
+
+# NOTE: The below line creates a new window and executes the command in zsh , because the focus is captured by the tmux due to attaching, so running commands outside of tmux is not possible 
 neww \; send-keys "hyprctl dispatch movetoworkspacesilent 3 && exit" Enter \;
+
 '
