@@ -14,13 +14,14 @@ tmux new -d -s Configs -n NvimConfigs "nvim ~/.config/nvim/" \; \
     neww -n WeztermConfigs "nvim ~/.config/wezterm/";
 
 # Create a session for the Next.js project 
-tmux new -d -s next\.js -n nextApp "nvim /mnt/WEB/NEXT.JS/" \; \
+tmux new -d -s next\.js -n nextApp "nvim /mnt/Aayush/WEB/NEXT.JS/" \; \
     neww -n ForServer \; \
-    send-keys "cd /mnt/WEB/NEXT.JS/ && clear" Enter \;
+    send-keys "cd /mnt/Aayush/WEB/NEXT.JS/ && clear" Enter \;
 
 # Attach to the `configs` session 
 tmux a -t Configs \; \
 select-window -t 1 \; \
 neww \; send-keys "hyprctl dispatch movetoworkspacesilent 3 && exit" Enter \;
 '
-# NOTE: The above last line creates a new window and executes the command in zsh , because the focus is captured by the tmux due to attaching, so running commands outside of tmux is not possible 
+
+# NOTE: The below line creates a new window and executes the command in zsh , because the focus is captured by the tmux due to attaching, so running commands outside of tmux is not possible 

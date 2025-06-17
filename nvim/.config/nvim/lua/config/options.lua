@@ -1,3 +1,7 @@
+-- disable the netrw , as we are using nvim-tree or neotree for the functionality
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.wo.number = true -- Make line numbers default (default: false)
 vim.o.relativenumber = true -- Set relative numbered lines (default: false)
 -- vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. (default: '')
