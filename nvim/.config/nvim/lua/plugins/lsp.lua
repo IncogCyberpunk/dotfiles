@@ -1,7 +1,6 @@
 return {
     'neovim/nvim-lspconfig',
     dependencies = {
----@diagnostic disable-next-line: trailing-space
     
       -- NOTE: Mason must be loaded before its dependents so we need to set it up here.
       { 'williamboman/mason.nvim',
@@ -194,7 +193,7 @@ return {
           function(server_name)
             local serverOptions = servers[server_name] or {}
           -- NOTE: The below is equivalent to `require('lspconfig')['lua_ls'].setup(serverOptions)`
-            require('lspconfig')[server_name].setup(serverOptions)
+           require('lspconfig')[server_name].setup(serverOptions)
           end,
         },
       }
