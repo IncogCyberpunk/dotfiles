@@ -1,8 +1,8 @@
-require  'config.options' -- Load general options
-require  'config.keymaps' -- Load general keymaps
-require  'config.snippets' -- Custom code snippets
+require  'config.options'
+require  'config.keymaps'
+require  'config.snippets'
 
--- Set up the Lazy plugin manager
+-- set up the lazy plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 -- Checks if the lazy.nvim file exists at the directory given by lazypath
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -14,25 +14,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 -- Puts the lazy into runtimepath for neovim
 vim.opt.runtimepath:prepend(lazypath)
-
--- Set up plugins
--- We are importing a lazy.lua file that's somewhere under the runtimepath for the neovim
--- require ('lazy').setup {
---   require  'plugins.neotree',
---   require  'plugins.colortheme',
---   require  'plugins.bufferline',
---   require  'plugins.lualine',
---   require  'plugins.treesitter',
---   require  'plugins.telescope',
---   require  'plugins.lsp',
---   require  'plugins.autocompletion',
---   -- require  'plugins.none-ls',
---   require  'plugins.gitsigns',
---   require  'plugins.alpha',
---   require  'plugins.indent-blankline',
---   require  'plugins.misc',
---   require  'plugins.comment',
--- }
 
 -- Better way to modularize the plugins by placing them inside folder called plugins inside the lua directory 
 require('lazy').setup('plugins')

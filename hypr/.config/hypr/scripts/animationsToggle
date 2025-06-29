@@ -3,9 +3,15 @@
  animationsState=$(hyprctl getoption animations:enabled | awk '/int/ {print $2}')
 
 if [[ "$animationsState" -eq 1 ]]  ; then
-    hyprctl keyword animations:enabled 0
-    dunstify "Animations" "Disabled"
+    hyprctl --batch "\
+    keyword animations:enabled 0;\
+    hyprctl keyword decorations:blur:enabled 0;\
+    hyprctl keyword decorations:shadow:enabled 0 "
+    dunstify "Animations & Decorations Disabled"
 else
-    hyprctl keyword animations:enabled 1
-    dunstify "Animations" "Enabled"
+    hyprctl --batch "\
+    keyword animations:enabled 1;\
+    hyprctl keyword decorations:blur:enabled 1;\
+    hyprctl keyword decorations:shadow:enabled 1 "
+    dunstify "Animations & Decorations Enabled"
 fi
