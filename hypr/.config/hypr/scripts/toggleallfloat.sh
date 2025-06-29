@@ -7,4 +7,4 @@
 #
 
 hyprctl dispatch workspaceopt allfloat
-dunstify "Windows on this workspace toggled to floating/tiling"
+notify-send "Windows on this workspace toggled to floating/tiling"

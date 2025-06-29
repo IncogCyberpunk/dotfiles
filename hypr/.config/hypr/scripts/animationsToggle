@@ -7,11 +7,11 @@ if [[ "$animationsState" -eq 1 ]]  ; then
     keyword animations:enabled 0;\
     hyprctl keyword decorations:blur:enabled 0;\
     hyprctl keyword decorations:shadow:enabled 0 "
-    dunstify "Animations & Decorations Disabled"
+    notify-send "Animations & Decorations Disabled" -t 0
 else
     hyprctl --batch "\
     keyword animations:enabled 1;\
     hyprctl keyword decorations:blur:enabled 1;\
-    hyprctl keyword decorations:shadow:enabled 1 "
-    dunstify "Animations & Decorations Enabled"
+    fyprctl keyword decorations:shadow:enabled 1 "
+    notify-send "Animations & Decorations Enabled" -t 0
 fi
