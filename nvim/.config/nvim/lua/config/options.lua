@@ -2,6 +2,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- Enable syncing of buffers 
+vim.o.autoread = true -- Automatically read files when changed outside of Neovim (default: false)
+
 vim.wo.number = true -- Make line numbers default (default: false)
 vim.o.relativenumber = true -- Set relative numbered lines (default: false)
 -- vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. (default: '')
