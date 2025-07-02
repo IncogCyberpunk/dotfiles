@@ -39,7 +39,7 @@ vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 -- Buffers
 -- vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 -- vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts) -- close buffer
+vim.keymap.set({'n','t'}, '<leader>x', ':bdelete!<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Window management
@@ -85,3 +85,6 @@ vim.keymap.set('n','<leader>ud',":e!<CR>", { desc = "Undo all changes to the fil
 
 -- Keymap to open a terminal
 vim.keymap.set('n','<leader>te',':terminal<CR>',{desc= "Open a new terminal in a tab"})
+
+-- Keymap to check if the file has been modified outside of Neovim
+vim.keymap.set('n','<leader>sy',"<cmd>checktime<CR>",{desc = "Check if the file has been modified outside of Neovim"})

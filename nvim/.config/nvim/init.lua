@@ -15,7 +15,7 @@ end
 -- Puts the lazy into runtimepath for neovim
 vim.opt.runtimepath:prepend(lazypath)
 
--- Better way to modularize the plugins by placing them inside folder called plugins inside the lua directory 
+-- NOTE: This way of modularizing plugins is provided by the lazy.nvim plugin manager , where lazy.nvim first checks if plugins.lua exists else if it's a directory then it auto. loads all .lua files in lua/plugin/ 
 require('lazy').setup('plugins')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
