@@ -22,8 +22,14 @@ return {
       -- NOTE: These are keybindigs for buffer so we use vim.keymap.set 
       -- NOTE: These keybindings inside opts section  only work when the plugins' buffer is active(focused)
       vim.keymap.set("n", "<C-e>", api.tree.close , opts("Map the default <C-e> keybinding to close the tree") )
+      vim.keymap.set("n", "l", api.node.open.edit,opts("Navigate Inside ") )
+      vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Parent") )
 
-    end
+    end,
+
+    filters={
+      dotfiles = true,
+    }
   },
   keys = {
     -- NOTE: Keybindings inside the keys section are global keybindings and are a method to specify custom keybindings , a functionality by Lazy.nvim
