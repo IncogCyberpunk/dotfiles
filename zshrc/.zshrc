@@ -68,9 +68,8 @@ source ~/.config/zshrc/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Source zsh-autopair
 source ~/.config/zshrc/plugins/zsh-autopair/autopair.zsh
 
-# TODO: Fix the keybinds that are colliding with my defined keybinds
-# Source zsh-vi-mode plugin
-# source ~/.config/zshrc/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# Source catppuccin zsh-syntax-highlighting theme
+source ~/.config/zshrc/plugins/zsh-syntax-highlighting/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 # NOTE:  Always source zsh-syntax-highlighting at end of .zshrc (A rule of thumb)
 source ~/.config/zshrc/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
