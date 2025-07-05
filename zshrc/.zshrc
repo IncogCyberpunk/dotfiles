@@ -1,6 +1,7 @@
 # Enable VI keybindings in zsh instead of EMACS (default) keybindings
 bindkey -v # bindkey -e (default)
 
+export TERM='xterm-256color' # to enable 256 colors in terminal 
 export EDITOR=nvim
 export QT_SElECT=6
 export QT_QPA_PLATFORMTHEME=qt6ct
@@ -19,7 +20,7 @@ setopt SHARE_HISTORY
 # SETUP ZOXIDE (-- the better cd --)
 # Environment variables that sets up the database for zoxide
 # Initialize zoxide 
- eval "$(zoxide init --cmd cd zsh)"
+ eval "$(zoxide init --cmd cd zsh)" // --cmd cd is used to make the command `cd` work with zoxide
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)

@@ -20,7 +20,7 @@ return {
     { 'nvim-telescope/telescope-ui-select.nvim' },
 
     -- Useful for getting pretty icons, but requires a Nerd Font.
-    { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
   },
   config = function()
     -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -49,18 +49,18 @@ return {
         mappings = {
           i = {
             ['<C-k>'] = require('telescope.actions').move_selection_previous, -- move to prev result
-            ['<C-j>'] = require('telescope.actions').move_selection_next, -- move to next result
-            ['<C-l>'] = require('telescope.actions').select_default, -- open file
+            ['<C-j>'] = require('telescope.actions').move_selection_next,     -- move to next result
+            ['<C-l>'] = require('telescope.actions').select_default,          -- open file
           },
         },
       },
       pickers = {
         find_files = {
-          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+          file_ignore_patterns = { 'node_modules', '.git', '.venv'},
           hidden = true,
         },
         live_grep = {
-          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
+          file_ignore_patterns = { 'node_modules', '.git', '.venv'},
           additional_args = function(_)
             return { '--hidden' }
           end,
@@ -83,7 +83,7 @@ return {
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
     vim.keymap.set('n', '<leader>re', builtin.registers, { desc = 'List the registers' })
     vim.keymap.set('n', '<leader>kt', builtin.colorscheme, { desc = 'Change Themes' })
-    vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+    vim.keymap.set({'n','t'}, '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
     vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
     vim.keymap.set('n', '<leader>lg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
@@ -91,8 +91,8 @@ return {
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-      -- You can put your default mappings / updates / etc. in here
-      --  All the info you're looking for is in `:help telescope.setup()`
+    -- You can put your default mappings / updates / etc. in here
+    --  All the info you're looking for is in `:help telescope.setup()`
 
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
@@ -111,5 +111,35 @@ return {
         prompt_title = 'Live Grep in Open Files',
       }
     end, { desc = '[S]earch [/] in Open Files' })
+
+    -- Find and Focus Directory (with Telescope)
+    function find_directory_and_focus()
+      local actions = require("telescope.actions")
+      local action_state = require("telescope.actions.state")
+
+      local function open_nvim_tree(prompt_bufnr, _)
+        actions.select_default:replace(function()
+          local api = require("nvim-tree.api")
+
+          actions.close(prompt_bufnr)
+          local selection = action_state.get_selected_entry()
+          api.tree.open()
+          api.tree.find_file(selection.cwd .. "/" .. selection.value)
+        end)
+        return true
+      end
+
+      if vim.fn.executable("fd") == 0 then
+        vim.notify("Warning: 'fd' is not installed. Telescope directory search will not work.",vim.log.levels.WARN)
+        return
+      end
+
+      require("telescope.builtin").find_files({
+        find_command = { "fd", "--type", "directory", "--hidden", "--exclude", ".git/*" },
+        attach_mappings = open_nvim_tree,
+      })
+    end
+    vim.keymap.set("n", "<leader>fd", find_directory_and_focus, { desc = "Find Directory and Focus in NvimTree" })
+
   end,
 }
