@@ -1,0 +1,228 @@
+/******************************************************************************
+ * ROFI Color theme - Material Design Enhanced
+ * Colors adapted from: https://github.com/ntpeters/base16-materialtheme-scheme
+ * Author: Aakrisht Sharma Paudel (AakrishtSP)
+ * Github: @AakrishtSP
+ ******************************************************************************/
+* {
+    // Material Design Color Palette
+    material-dark:      #263238;
+    surface-dark:       #2E3C43;
+    surface-light:      #314549;
+    material-gray:      #546E7A;
+    light-surface:      #B2CCD6;
+    pure-white:         #EEFFFF;
+    bright-white:       #FFFFFF;
+    coral-red:          #F07178;
+    warm-orange:        #F78C6C;
+    golden-yellow:      #FFCB6B;
+    nature-green:       #C3E88D;
+    ocean-cyan:         #89DDFF;
+    sky-blue:          #82AAFF;
+    lavender-purple:    #C792EA;
+    accent-red:         #FF5370;
+
+    // Derived Theme Variables
+    foreground:                  @pure-white;
+    normal-foreground:           @pure-white;
+    selected-normal-foreground:  @material-dark;
+    urgent-foreground:           @accent-red;
+    active-foreground:           @nature-green;
+    selected-urgent-foreground:  @material-dark;
+    selected-active-foreground:  @material-dark;
+    
+    background:                  @material-dark;
+    normal-background:           @material-dark;
+    selected-normal-background:  @sky-blue;
+    urgent-background:           @material-dark;
+    active-background:           @material-gray;
+    selected-urgent-background:  @accent-red;
+    selected-active-background:  @nature-green;
+    
+    // Alternating pattern colors
+    alternate-normal-background: @surface-dark;
+    alternate-normal-foreground: @normal-foreground;
+    alternate-urgent-background: @surface-dark;
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-active-background: @surface-dark;
+    alternate-active-foreground: @active-foreground;
+    
+    separatorcolor:              @surface-light;
+    bordercolor:                 @surface-light;
+    border-color:                @surface-light;
+    
+    spacing:                     2;
+    background-color:            @material-dark;
+    
+    highlight:                   @lavender-purple;
+    subtle-text:                 @light-surface;
+}
+
+window {
+    background-color: @material-dark;
+    border:           1;
+    border-color:     @surface-light;
+    border-radius:    8;
+    padding:          15;
+    width:            600;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:        1;
+    border-color:  @surface-light;
+    padding:       8 0;
+    margin:        0 0 5 0;
+}
+
+textbox {
+    text-color: @pure-white;
+    font:       "JetBrains Mono 12";
+}
+
+listview {
+    fixed-height: 0;
+    border:       1;
+    border-color: @surface-light;
+    spacing:      3;
+    scrollbar:    true;
+    padding:      8 0 0 0;
+    margin:       5 0;
+    dynamic:      true;
+}
+
+element {
+    border:  0;
+    padding: 8 12;
+    border-radius: 4;
+    margin:  2 0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-left:      3;
+    border-color:     @highlight;
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+    border-left:      3;
+    border-color:     @lavender-purple;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+    border-left:      3;
+    border-color:     @ocean-cyan;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @active-foreground;
+    font:             "Fira Sans 14";
+}
+
+scrollbar {
+    width:        6;
+    border:       0;
+    handle-color: @lavender-purple;
+    handle-width: 8;
+    padding:      0;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @pure-white;
+    padding:    10;
+    background: @surface-dark;
+    border-radius: 6;
+    margin:     0 0 10 0;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        "❯";
+    margin:     0 10 0 5;
+    text-color: @lavender-purple;
+    font:       "Symbols Nerd Font 16";
+}
+
+entry {
+    text-color:   @pure-white;
+    font:         "Fira Sans 14";
+    cursor:       text;
+    cursor-color: @sky-blue;
+}
+
+prompt {
+    text-color: @sky-blue;
+    font:       "Fira Sans Bold 14";
+}
+
+case-indicator {
+    text-color: @light-surface;
+    margin:     0 0 0 10;
+}
+
+mode-switcher {
+    border:       2;
+    border-color: @surface-light;
+    padding:      8;
+    margin:       10 0 0 0;
+}
+
+button {
+    padding:      5 10;
+    border-radius: 4;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-bottom:    2;
+    border-color:     @sky-blue;
+}
