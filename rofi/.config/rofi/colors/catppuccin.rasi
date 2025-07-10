@@ -1,0 +1,244 @@
+/******************************************************************************
+ * ROFI Color theme - Catppuccin Mocha Enhanced
+ * Colors adapted from: https://github.com/catppuccin/catppuccin
+ * Author: Aakrisht Sharma Paudel (AakrishtSP)
+ * Github: @AakrishtSP
+ ******************************************************************************/
+* {
+    // Catppuccin Mocha Color Palette
+    base:           #1E1E2E;
+    mantle:         #181825;
+    crust:          #11111B;
+    text:           #CDD6F4;
+    subtext1:       #BAC2DE;
+    subtext0:       #A6ADC8;
+    overlay2:       #9399B2;
+    overlay1:       #7F849C;
+    overlay0:       #6C7086;
+    surface2:       #585B70;
+    surface1:       #45475A;
+    surface0:       #313244;
+    lavender:       #B4BEFE;
+    blue:           #89B4FA;
+    sapphire:       #74C7EC;
+    sky:            #89DCEB;
+    teal:           #94E2D5;
+    green:          #A6E3A1;
+    yellow:         #F9E2AF;
+    peach:          #FAB387;
+    maroon:         #EBA0AC;
+    red:            #F38BA8;
+    mauve:          #CBA6F7;
+    pink:           #F5C2E7;
+    flamingo:       #F2CDCD;
+    rosewater:      #F5E0DC;
+
+    // Derived Theme Variables
+    foreground:                  @text;
+    normal-foreground:           @text;
+    selected-normal-foreground:  @base;
+    urgent-foreground:           @red;
+    active-foreground:           @blue;
+    selected-urgent-foreground:  @base;
+    selected-active-foreground:  @base;
+    
+    background:                  @base;
+    normal-background:           @base;
+    selected-normal-background:  @mauve;
+    urgent-background:           @base;
+    active-background:           @surface0;
+    selected-urgent-background:  @red;
+    selected-active-background:  @blue;
+    
+    // Alternating pattern colors
+    alternate-normal-background: @mantle;
+    alternate-normal-foreground: @normal-foreground;
+    alternate-urgent-background: @mantle;
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-active-background: @mantle;
+    alternate-active-foreground: @active-foreground;
+    
+    separatorcolor:              @surface1;
+    bordercolor:                 @surface1;
+    border-color:                @surface1;
+    
+    spacing:                     2;
+    background-color:            @base;
+    
+    highlight:                   @pink;
+    subtle-text:                 @subtext1;
+}
+
+window {
+    background-color: @base;
+    border:           1;
+    border-color:     @surface1;
+    border-radius:    8;
+    padding:          15;
+    width:            600;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:        1;
+    border-color:  @surface1;
+    padding:       8 0;
+    margin:        0 0 5 0;
+}
+
+textbox {
+    text-color: @text;
+    font:       "JetBrains Mono 12";
+}
+
+listview {
+    fixed-height: 0;
+    border:       1;
+    border-color: @surface1;
+    spacing:      3;
+    scrollbar:    true;
+    padding:      8 0 0 0;
+    margin:       5 0;
+    dynamic:      true;
+}
+
+element {
+    border:  0;
+    padding: 8 12;
+    border-radius: 4;
+    margin:  2 0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-left:      3;
+    border-color:     @highlight;
+    font:             "Fira Sans Bold 14";
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+    border-left:      3;
+    border-color:     @pink;
+    font:             "Fira Sans Bold 14";
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+    border-left:      3;
+    border-color:     @lavender;
+    font:             "Fira Sans Bold 14";
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+    font:             "Fira Sans 14";
+}
+
+scrollbar {
+    width:        6;
+    border:       0;
+    handle-color: @pink;
+    handle-width: 8;
+    padding:      0;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @text;
+    padding:    10;
+    background: @mantle;
+    border-radius: 6;
+    margin:     0 0 10 0;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        "❯";
+    margin:     0 10 0 5;
+    text-color: @pink;
+    font:       "Symbols Nerd Font 16";
+}
+
+entry {
+    text-color:   @text;
+    font:         "Fira Sans 14";
+    cursor:       text;
+    cursor-color: @mauve;
+}
+
+prompt {
+    text-color: @mauve;
+    font:       "Fira Sans Bold 14";
+}
+
+case-indicator {
+    text-color: @subtext1;
+    margin:     0 0 0 10;
+}
+
+mode-switcher {
+    border:       2;
+    border-color: @surface1;
+    padding:      8;
+    margin:       10 0 0 0;
+}
+
+button {
+    padding:      5 10;
+    border-radius: 4;
+    font:         "Fira Sans 14";
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-bottom:    2;
+    border-color:     @mauve;
+    font:             "Fira Sans Bold 14";
+}
