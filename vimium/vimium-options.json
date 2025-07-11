@@ -1,0 +1,23 @@
+{
+  "keyMappings": "# Insert your preferred key mappings here.\n\nunmap d\nunmap u\nunmap r\nunmap t\n\nmap <c-d> scrollFullPageDown\nmap <c-u> scrollFullPageUp\n\n# Change the default mark-keybindings\nmap m Marks.activateCreateMode swap\nmap M Marks.activateGotoMode swap\n\n# Go to previously visited tab\nmap e visitPreviousTab\n\n# Keybindings for passNextKey\nmap <c-e> passNextKey",
+  "grabBackFocus": true,
+  "settingsVersion": "2.3",
+  "exclusionRules": [
+    {
+      "passKeys": "a s d f g h j k l w r t",
+      "pattern": "https?://krunker.io/*"
+    },
+    {
+      "passKeys": "*",
+      "pattern": "https?://krunker.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://krunker.io/*"
+    },
+    {
+      "passKeys": "e",
+      "pattern": "https://youtube.com/*"
+    }
+  ]
+}
