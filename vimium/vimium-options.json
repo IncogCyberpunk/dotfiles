@@ -1,5 +1,5 @@
 {
-  "keyMappings": "# Insert your preferred key mappings here.\n\nunmap d\nunmap u\nunmap r\nunmap t\n\nmap <c-d> scrollFullPageDown\nmap <c-u> scrollFullPageUp\n\n# Change the default mark-keybindings\nmap m Marks.activateCreateMode swap\nmap M Marks.activateGotoMode swap\n\n# Go to previously visited tab\nmap e visitPreviousTab\n\n# Keybindings for passNextKey\nmap <c-e> passNextKey",
+  "keyMappings": "# Insert your preferred key mappings here.\n\nunmap d\nunmap u\nunmap r\nunmap t\n\nmap <c-d> scrollFullPageDown\nmap <c-u> scrollFullPageUp\n\n# Change the default mark-keybindings\nmap m Marks.activateCreateMode swap\nmap M Marks.activateGotoMode swap\n\n# Go to previously visited tab\nmap <c-e> visitPreviousTab\n\n# Keybindings for passNextKey\nmap e passNextKey",
   "grabBackFocus": true,
   "settingsVersion": "2.3",
   "exclusionRules": [
