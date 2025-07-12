@@ -31,6 +31,8 @@ return {
 
         vim.keymap.set("n", "l", api.node.open.edit, opts("Navigate Inside "))
 
+        vim.keymap.set("n", "L", api.tree.expand_all, opts("Navigate Inside "))
+
         vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Parent"))
 
         vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse All"))
