@@ -68,9 +68,12 @@ alias ytdlpmusic="yt-dlp --extract-audio --audio-format mp3 --audio-quality 0"
 # -----------------------------------------------------
 # Fzf 
 # -----------------------------------------------------
-alias spkg="pacman -Qq | fzf -m" # Search installed pkg using fzf
-alias rpkg='sudo pacman -Rns $(pacman -Qq | fzf)' # Search pkg using fzf with -m flag to select mutliple pkgs and remove it 
-#
+alias spkg="pacman -Qq | fzf  | xargs -r pacman -Qi" # Search installed pkg using fzf
+
+# NOTE: -r flag in xargs to exit if std. input is empty , -o flag to reopen stdin as /dev/tty in child processes before executing the command , which is useful for running interactive applications
+alias rpkg='pacman -Qq | fzf -m | xargs -ro sudo pacman -Rns' 
+
+
      
 alias rfile='rm -ri "$(fzf -m)"'
 
