@@ -1,0 +1,8 @@
+[Unit]
+Description=Pause playerctl when sound device changes
+Requires=sound.target
+After=sound.target pipewire.service pulseaudio.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/playerctl pause --all-players
