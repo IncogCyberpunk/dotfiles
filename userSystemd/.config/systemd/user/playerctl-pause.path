@@ -1,0 +1,10 @@
+[Unit]
+Description=Monitor sound device changes
+StartLimitIntervalSec=60
+StartLimitBurst=10
+
+[Path]
+PathChanged=/dev/snd
+
+[Install]
+WantedBy=sound.target
