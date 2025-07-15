@@ -1,8 +1,0 @@
-// ~/.config/rofi/menu/theme-switcher.rasi
-
-@import "~/.config/rofi/config.rasi"
-
-configuration {
-    show-icons: false;
-}
-
