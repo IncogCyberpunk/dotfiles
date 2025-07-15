@@ -6,9 +6,9 @@
 # General
 # -----------------------------------------------------
 alias ff='fastfetch'
-alias ls="eza  --all --icons=always"
-alias ll='eza -al --icons=always --group'
-alias lt='eza -a --tree --level=1 --icons=always '
+alias -g ls="eza  --all --icons=always"
+alias -g ll='eza -al --icons=always --group'
+alias -g lt='eza -a --tree --level=1 --icons=always '
 alias n='$EDITOR'
 alias -g vim='$EDITOR'
 alias wifi='nmtui'
@@ -73,9 +73,11 @@ alias spkg="pacman -Qq | fzf  | xargs -r pacman -Qi" # Search installed pkg usin
 # NOTE: -r flag in xargs to exit if std. input is empty , -o flag to reopen stdin as /dev/tty in child processes before executing the command , which is useful for running interactive applications
 alias rpkg='pacman -Qq | fzf -m | xargs -or sudo pacman -Rns' 
 
+sfile(){
+    fzf -m | xargs -or ls -l
+}
 
-     
-alias rfile='rm -ri "$(fzf -m)"'
+alias rfile='fzf -m | xargs -or rm -Iv'
 
 # Zoxide Aliases
 alias cde="zoxide edit"
