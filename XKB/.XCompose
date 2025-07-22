@@ -1,0 +1,96 @@
+# NOTE: Included this file to preserve all the other original Compose key mappings.
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+# NOTE: Superscripts using ; (semicolon) and subscripts using ' (apostrophe) after Compose key (Right Alt)
+
+# Superscript Lowercase Letters
+<Multi_key> <semicolon> <a> : "ᵃ" U1D43
+<Multi_key> <semicolon> <b> : "ᵇ" U1D47
+<Multi_key> <semicolon> <c> : "ᶜ" U1D9C
+<Multi_key> <semicolon> <d> : "ᵈ" U1D48
+<Multi_key> <semicolon> <e> : "ᵉ" U1D49
+<Multi_key> <semicolon> <f> : "ᶠ" U1DA0
+<Multi_key> <semicolon> <g> : "ᵍ" U1D4D
+<Multi_key> <semicolon> <h> : "ʰ" U02B0
+<Multi_key> <semicolon> <i> : "ⁱ" U2071
+<Multi_key> <semicolon> <j> : "ʲ" U02B2
+<Multi_key> <semicolon> <k> : "ᵏ" U1D4F
+<Multi_key> <semicolon> <l> : "ˡ" U02E1
+<Multi_key> <semicolon> <m> : "ᵐ" U1D50
+<Multi_key> <semicolon> <n> : "ⁿ" U207F
+<Multi_key> <semicolon> <o> : "ᵒ" U1D52
+<Multi_key> <semicolon> <p> : "ᵖ" U1D56
+<Multi_key> <semicolon> <q> : "ᵆ" U1D55
+<Multi_key> <semicolon> <r> : "ʳ" U02B3
+<Multi_key> <semicolon> <s> : "ˢ" U02E2
+<Multi_key> <semicolon> <t> : "ᵗ" U1D57
+<Multi_key> <semicolon> <u> : "ᵘ" U1D58
+<Multi_key> <semicolon> <v> : "ᵛ" U1D5B
+<Multi_key> <semicolon> <w> : "ʷ" U02B7
+<Multi_key> <semicolon> <x> : "ˣ" U02E3
+<Multi_key> <semicolon> <y> : "ʸ" U02B8
+<Multi_key> <semicolon> <z> : "ᶻ" U1DBB
+
+# Subscript Lowercase Letters
+<Multi_key> <apostrophe> <a> : "ₐ" U2090
+<Multi_key> <apostrophe> <e> : "ₑ" U2091
+<Multi_key> <apostrophe> <h> : "ₕ" U2095
+<Multi_key> <apostrophe> <i> : "ᵢ" U1D62
+<Multi_key> <apostrophe> <j> : "ⱼ" U2C7C
+<Multi_key> <apostrophe> <k> : "ₖ" U2096
+<Multi_key> <apostrophe> <l> : "ₗ" U2097
+<Multi_key> <apostrophe> <m> : "ₘ" U2098
+<Multi_key> <apostrophe> <n> : "ₙ" U2099
+<Multi_key> <apostrophe> <o> : "ₒ" U2092
+<Multi_key> <apostrophe> <p> : "ₚ" U209A
+<Multi_key> <apostrophe> <r> : "ᵣ" U1D63
+<Multi_key> <apostrophe> <s> : "ₛ" U209B
+<Multi_key> <apostrophe> <t> : "ₜ" U209C
+<Multi_key> <apostrophe> <u> : "ᵤ" U1D64
+<Multi_key> <apostrophe> <x> : "ₓ" U2093
+
+# Superscript Capital Letters (limited Unicode support, using available phonetic/mathematical superscripts)
+<Multi_key> <semicolon> <A> : "ᴬ" U1D2C
+<Multi_key> <semicolon> <B> : "ᴮ" U1D2E
+<Multi_key> <semicolon> <D> : "ᴰ" U1D30
+<Multi_key> <semicolon> <E> : "ᴱ" U1D31
+<Multi_key> <semicolon> <G> : "ᴳ" U1D33
+<Multi_key> <semicolon> <H> : "ᴴ" U1D34
+<Multi_key> <semicolon> <I> : "ᴵ" U1D35
+<Multi_key> <semicolon> <J> : "ᴶ" U1D36
+<Multi_key> <semicolon> <K> : "ᴷ" U1D37
+<Multi_key> <semicolon> <L> : "ᴸ" U1D38
+<Multi_key> <semicolon> <M> : "ᴹ" U1D39
+<Multi_key> <semicolon> <N> : "ᴺ" U1D3A
+<Multi_key> <semicolon> <O> : "ᴼ" U1D3C
+<Multi_key> <semicolon> <P> : "ᴾ" U1D3E
+<Multi_key> <semicolon> <Q> : "ᵠ" U1D60
+<Multi_key> <semicolon> <R> : "ᴿ" U1D3F
+<Multi_key> <semicolon> <T> : "ᵀ" U1D40
+<Multi_key> <semicolon> <U> : "ᵁ" U1D41
+<Multi_key> <semicolon> <V> : "ᵂ" U1D42
+<Multi_key> <semicolon> <W> : "ᵂ" U1D42  # Same as V, as W uses same glyph
+
+# Numbers
+<Multi_key> <semicolon> <0> : "⁰" U2070
+<Multi_key> <semicolon> <1> : "¹" U2071
+<Multi_key> <semicolon> <2> : "²" U00B2
+<Multi_key> <semicolon> <3> : "³" U00B3
+<Multi_key> <semicolon> <4> : "⁴" U2074
+<Multi_key> <semicolon> <5> : "⁵" U2075
+<Multi_key> <semicolon> <6> : "⁶" U2076
+<Multi_key> <semicolon> <7> : "⁷" U2077
+<Multi_key> <semicolon> <8> : "⁸" U2078
+<Multi_key> <semicolon> <9> : "⁹" U2079
+
+# Numbers
+<Multi_key> <apostrophe> <0> : "₀" U2080
+<Multi_key> <apostrophe> <1> : "₁" U2081
+<Multi_key> <apostrophe> <2> : "₂" U2082
+<Multi_key> <apostrophe> <3> : "₃" U2083
+<Multi_key> <apostrophe> <4> : "₄" U2084
+<Multi_key> <apostrophe> <5> : "₅" U2085
+<Multi_key> <apostrophe> <6> : "₆" U2086
+<Multi_key> <apostrophe> <7> : "₇" U2087
+<Multi_key> <apostrophe> <8> : "₈" U2088
+<Multi_key> <apostrophe> <9> : "₉" U2089
