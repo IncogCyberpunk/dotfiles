@@ -13,5 +13,7 @@ if (pgrep spotify > /dev/null) ; then
     fi
 else
     spotify 
+    sleep 1
+    hyprctl dispatch movetoworkspacesilent 4
 fi
 
