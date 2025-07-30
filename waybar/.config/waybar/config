@@ -30,7 +30,6 @@
 
     // Modules Center
     "modules-center": [
-        "hyprland/window",
         "clock",
     ],
 
