@@ -78,6 +78,7 @@ sfile(){
 }
 
 alias rfile='fzf -m | xargs -or rm -Iv'
+alias rdir="fd --max-depth 1 --type d  | fzf -m | xargs -or -I {} rm -rIv {}" # Remove directories using fd and fzf
 
 # Zoxide Aliases
 alias cde="zoxide edit"

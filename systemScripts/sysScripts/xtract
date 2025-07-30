@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+DIR="."
+type=$1
+choice=$2
+
+extractZip(){
+    for zipFile in "$DIR"/*.zip; do
+        if [[ ! -f "$zipFile" ]]; then
+            echo -e "No zip file found in $DIR \n"
+            exit 1
+        fi
+
+        if [[ -d ${zipFile%.zip} ]]; then
+            echo -e "Directory ${zipFile%.zip} already exists !! Exiting...\n"
+            exit 1
+        fi
+
+        echo -e "Extracting $0 .\n"
+        case $choice in
+            "here")
+                unzip -q "$zipFile" 
+                ;;
+            *)
+                unzip -q "$zipFile" -d "${zipFile%.zip}"
+                ;;
+        esac
+
+        if [[ $? -eq 0 ]]; then
+            echo "Successfully extracted $zipFile "
+        else
+            echo "Failed to extract $zipFile "
+            exit 1
+        fi
+
+    done
+}
+
+extractTar(){
+    for tarFile in "$DIR"/*.tar ; do
+        if [[ ! -f "$tarFile" ]] ; then
+            echo -e "No tar file found in $DIR \n"
+            exit 1
+        fi
+        
+        if [[ -d ${tarFile%.tar} ]]; then
+            echo -e "Directory ${tarFile%.tar} already exists !! Exiting...\n"
+            exit 1
+        fi
+
+        echo -e "Extracting $tarFile \n"
+        case $choice in
+            "here")
+                tar -xvf "$tarFile" 1> /dev/null
+                ;;
+            *)    
+                mkdir "${tarFile%.tar}"
+                tar -xvf "$tarFile" --directory="${tarFile%.tar}" 1> /dev/null
+                ;;
+        esac
+        
+        if [[ $? -eq 0 ]]; then
+            echo "Successfully extracted $tarFile "
+        else
+            echo "Failed to extract $tarFile "
+        fi
+
+    done
+}
+
+# Perform extraction based on the type
+case $type in
+    "tar")
+        extractTar
+        ;;
+    "zip")
+        extractZip
+        ;;
+esac
+
+# Case syntax
+# case $variable in
+#    pattern1)
+#       command1
+#    ;;
+#    pattern2)
+#       command2
+#    ;;
+#    *)
+#       default_command
+#    ;;
+#   esac
+#
