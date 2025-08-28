@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+DIR="."
+
+for file in "$DIR"/*.pdf; do
+    if [ -f "$file" ]; then
+        echo "Processing $file"
+        exiftool -overwrite_original -title="" "$file"
+    else
+        echo "No PDF files found here."
+    fi
+done
+
