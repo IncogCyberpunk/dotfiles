@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Directory to save the dumped images
+OUTDIR="Images"
+mkdir -p "$OUTDIR"
+
+# Get list of partitions from the device
+PARTITIONS=$(adb shell ls /dev/block/by-name | awk '{print $1}')
+
+# Loop through each partition and dump it
+for PART in $PARTITIONS; do
+    echo "Dumping $PART ..."
+    # NOTE: exec-out executes the command on device, and gets output which is then redirected to a file
+    adb exec-out "dd if=/dev/block/by-name/$PART" > "$OUTDIR/$PART.img" 
+done
+
+echo "✅ All partitions dumped to $OUTDIR/"
+
