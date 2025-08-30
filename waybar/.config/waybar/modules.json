@@ -207,7 +207,7 @@
 
   // Clock
   "clock": {
-    "format": "{:%H:%M %a}",
+    "format": "{:%H:%M | %a | %b %d}",
     "on-click": "kitty cal",
     "timezone": "",
     "tooltip": false
