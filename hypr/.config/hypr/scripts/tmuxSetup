@@ -18,10 +18,6 @@ tmux new -d -s next\.js -n nextApp "nvim /mnt/Aayush/WEB/NEXT.JS/" \; \
     neww -n ForServer \; \
     send-keys "cd /mnt/Aayush/WEB/NEXT.JS/ && clear" Enter \;
 
-# Create a session for the OS project 
-tmux new -d -s OS -c "/mnt/Aayush/4th sem/OS/project" -n Codes "nvim main.cpp" \; \
-    neww -n Monitor -c "#{pane_current_path}" \; 
-
 tmux a -t Configs \; \
 select-window -t 1 \; \
 neww \; send-keys "hyprctl dispatch movetoworkspacesilent 3 && exit" Enter \;
