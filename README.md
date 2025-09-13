@@ -18,7 +18,7 @@ The goal is to create a lightweight, efficient, and visually appealing desktop e
 Before using these dotfiles, ensure you have the following installed:
 - [Hyprland](https://hyprland.org/) (latest stable version recommended)
 - [Waybar](https://github.com/Alexays/Waybar)
-- [Alacritty](https://github.com/alacritty/alacritty)
+- [Wezterm](https://github.com/wezterm/wezterm)
 - [Neovim](https://neovim.io/)
 - A Nerd Font (e.g., JetBrains Mono Nerd Font) for icons and glyphs
 - Other dependencies listed in `dependencies.txt` (if applicable)
@@ -90,5 +90,5 @@ This repository is licensed under the GNU GPL-3.0 License. Feel free to use and 
 ## Acknowledgments
 ```
 Inspired by various dotfile repositories and the Hyprland community.
-Thanks to the developers of Hyprland, Waybar, Alacritty, and Neovim for their amazing tools.
+Thanks to the developers of Hyprland, Neovim,  Waybar & Wezterm for their amazing tools.
 ```
