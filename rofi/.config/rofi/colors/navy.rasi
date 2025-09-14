@@ -1,0 +1,225 @@
+/******************************************************************************
+ * ROFI Color theme - Navy Deep Enhanced
+ * Colors adapted from deep navy/ocean themes
+ * Author: Aakrisht Sharma Paudel (AakrishtSP)
+ * Github: @AakrishtSP
+ ******************************************************************************/
+* {
+    // Navy Deep Color Palette
+    ocean-deep:     #021B21;
+    deep-water:     #0C252B;
+    abyss-dark:     #010E12;
+    pearl-cream:    #F2F1B9;
+    sea-foam:       #E6E5A8;
+    teal-wave:      #44B5B1;
+    sea-green:      #7CBF9E;
+    coral-red:      #C2454E;
+    azure-blue:     #5F9EA0;
+    navy-blue:      #1E3A5F;
+    storm-gray:     #2C3E3E;
+    tide-gray:      #1A2E34;
+
+    // Derived Theme Variables
+    foreground:                  @pearl-cream;
+    normal-foreground:           @pearl-cream;
+    selected-normal-foreground:  @ocean-deep;
+    urgent-foreground:           @coral-red;
+    active-foreground:           @sea-green;
+    selected-urgent-foreground:  @ocean-deep;
+    selected-active-foreground:  @ocean-deep;
+    
+    background:                  @ocean-deep;
+    normal-background:           @ocean-deep;
+    selected-normal-background:  @teal-wave;
+    urgent-background:           @ocean-deep;
+    active-background:           @storm-gray;
+    selected-urgent-background:  @coral-red;
+    selected-active-background:  @sea-green;
+    
+    // Alternating pattern colors
+    alternate-normal-background: @deep-water;
+    alternate-normal-foreground: @normal-foreground;
+    alternate-urgent-background: @deep-water;
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-active-background: @deep-water;
+    alternate-active-foreground: @active-foreground;
+    
+    separatorcolor:              @tide-gray;
+    bordercolor:                 @tide-gray;
+    border-color:                @tide-gray;
+    
+    spacing:                     2;
+    background-color:            @ocean-deep;
+    
+    highlight:                   @azure-blue;
+    subtle-text:                 @sea-foam;
+}
+
+window {
+    background-color: @ocean-deep;
+    border:           1;
+    border-color:     @tide-gray;
+    border-radius:    8;
+    padding:          15;
+    width:            600;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:        1;
+    border-color:  @tide-gray;
+    padding:       8 0;
+    margin:        0 0 5 0;
+}
+
+textbox {
+    text-color: @pearl-cream;
+    font:       "JetBrains Mono 12";
+}
+
+listview {
+    fixed-height: 0;
+    border:       1;
+    border-color: @tide-gray;
+    spacing:      3;
+    scrollbar:    true;
+    padding:      8 0 0 0;
+    margin:       5 0;
+    dynamic:      true;
+}
+
+element {
+    border:  0;
+    padding: 8 12;
+    border-radius: 4;
+    margin:  2 0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-left:      3;
+    border-color:     @highlight;
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+    border-left:      3;
+    border-color:     @azure-blue;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+    border-left:      3;
+    border-color:     @navy-blue;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+    font:             "Fira Sans 14";
+}
+
+scrollbar {
+    width:        6;
+    border:       0;
+    handle-color: @azure-blue;
+    handle-width: 8;
+    padding:      0;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @pearl-cream;
+    padding:    10;
+    background: @deep-water;
+    border-radius: 6;
+    margin:     0 0 10 0;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        "❯";
+    margin:     0 10 0 5;
+    text-color: @azure-blue;
+    font:       "Symbols Nerd Font 16";
+}
+
+entry {
+    text-color:   @pearl-cream;
+    font:         "Fira Sans 14";
+    cursor:       text;
+    cursor-color: @teal-wave;
+}
+
+prompt {
+    text-color: @teal-wave;
+    font:       "Fira Sans Bold 14";
+}
+
+case-indicator {
+    text-color: @sea-foam;
+    margin:     0 0 0 10;
+}
+
+mode-switcher {
+    border:       2;
+    border-color: @tide-gray;
+    padding:      8;
+    margin:       10 0 0 0;
+}
+
+button {
+    padding:      5 10;
+    border-radius: 4;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-bottom:    2;
+    border-color:     @teal-wave;
+}

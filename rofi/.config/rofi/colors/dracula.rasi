@@ -1,0 +1,227 @@
+/******************************************************************************
+ * ROFI Color theme - Dracula Enhanced
+ * Colors adapted from: https://draculatheme.com/
+ * Author: Aakrisht Sharma Paudel (AakrishtSP)
+ * Github: @AakrishtSP
+ ******************************************************************************/
+* {
+    // Dracula Color Palette
+    background:     #282A36;
+    current-line:   #44475A;
+    foreground:     #F8F8F2;
+    comment:        #6272A4;
+    cyan:           #8BE9FD;
+    green:          #50FA7B;
+    orange:         #FFB86C;
+    pink:           #FF79C6;
+    purple:         #BD93F9;
+    red:            #FF5555;
+    yellow:         #F1FA8C;
+    
+    // Derived Theme Variables
+    normal-foreground:           @foreground;
+    selected-normal-foreground:  @background;
+    urgent-foreground:           @red;
+    active-foreground:           @green;
+    selected-urgent-foreground:  @background;
+    selected-active-foreground:  @background;
+    
+    normal-background:           @background;
+    selected-normal-background:  @purple;
+    urgent-background:           @background;
+    active-background:           @current-line;
+    selected-urgent-background:  @red;
+    selected-active-background:  @green;
+    
+    // Alternating pattern colors
+    alternate-normal-background: @current-line;
+    alternate-normal-foreground: @normal-foreground;
+    alternate-urgent-background: @current-line;
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-active-background: @current-line;
+    alternate-active-foreground: @active-foreground;
+    
+    separatorcolor:              @comment;
+    bordercolor:                 @comment;
+    border-color:                @comment;
+    
+    spacing:                     2;
+    background-color:            @background;
+    
+    highlight:                   @pink;
+    subtle-text:                 @comment;
+}
+
+window {
+    background-color: @background;
+    border:           1;
+    border-color:     @comment;
+    border-radius:    8;
+    padding:          15;
+    width:            600;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:        1;
+    border-color:  @comment;
+    padding:       8 0;
+    margin:        0 0 5 0;
+}
+
+textbox {
+    text-color: @foreground;
+    font:       "JetBrains Mono 12";
+}
+
+listview {
+    fixed-height: 0;
+    border:       1;
+    border-color: @comment;
+    spacing:      3;
+    scrollbar:    true;
+    padding:      8 0 0 0;
+    margin:       5 0;
+    dynamic:      true;
+}
+
+element {
+    border:  0;
+    padding: 8 12;
+    border-radius: 4;
+    margin:  2 0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-left:      3;
+    border-color:     @highlight;
+    font:             "Fira Sans Bold 14";
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+    border-left:      3;
+    border-color:     @pink;
+    font:             "Fira Sans Bold 14";
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+    border-left:      3;
+    border-color:     @cyan;
+    font:             "Fira Sans Bold 14";
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+    font:             "Fira Sans 14";
+}
+
+scrollbar {
+    width:        6;
+    border:       0;
+    handle-color: @pink;
+    handle-width: 8;
+    padding:      0;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @foreground;
+    padding:    10;
+    background: @current-line;
+    border-radius: 6;
+    margin:     0 0 10 0;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        "❯";
+    margin:     0 10 0 5;
+    text-color: @pink;
+    font:       "Symbols Nerd Font 16";
+}
+
+entry {
+    text-color:   @foreground;
+    font:         "Fira Sans 14";
+    cursor:       text;
+    cursor-color: @purple;
+}
+
+prompt {
+    text-color: @purple;
+    font:       "Fira Sans Bold 14";
+}
+
+case-indicator {
+    text-color: @comment;
+    margin:     0 0 0 10;
+}
+
+mode-switcher {
+    border:       2;
+    border-color: @comment;
+    padding:      8;
+    margin:       10 0 0 0;
+}
+
+button {
+    padding:      5 10;
+    border-radius: 4;
+    font:         "Fira Sans 14";
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-bottom:    2;
+    border-color:     @purple;
+    font:             "Fira Sans Bold 14";
+}

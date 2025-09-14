@@ -1,0 +1,225 @@
+/******************************************************************************
+ * ROFI Color theme - Purple Dreams Enhanced
+ * Colors adapted from purple aesthetic themes
+ * Author: Aakrisht Sharma Paudel (AakrishtSP)
+ * Github: @AakrishtSP
+ ******************************************************************************/
+* {
+    // Purple Dreams Color Palette
+    deep-violet:    #2F1E2E;
+    dark-plum:      #3D2A3C;
+    shadow-purple:  #241A23;
+    moonlight:      #FFFFFF;
+    silver-mist:    #B4B4B4;
+    royal-purple:   #815BA4;
+    amethyst:       #9D5FC7;
+    lavender-pink:  #D885C4;
+    cosmic-purple:  #6B4C93;
+    twilight-blue:  #7B68EE;
+    mystic-gray:    #5A4C69;
+    shadow-mist:    #4A3F58;
+
+    // Derived Theme Variables
+    foreground:                  @silver-mist;
+    normal-foreground:           @silver-mist;
+    selected-normal-foreground:  @moonlight;
+    urgent-foreground:           @lavender-pink;
+    active-foreground:           @royal-purple;
+    selected-urgent-foreground:  @moonlight;
+    selected-active-foreground:  @moonlight;
+    
+    background:                  @deep-violet;
+    normal-background:           @deep-violet;
+    selected-normal-background:  @royal-purple;
+    urgent-background:           @deep-violet;
+    active-background:           @mystic-gray;
+    selected-urgent-background:  @lavender-pink;
+    selected-active-background:  @amethyst;
+    
+    // Alternating pattern colors
+    alternate-normal-background: @dark-plum;
+    alternate-normal-foreground: @normal-foreground;
+    alternate-urgent-background: @dark-plum;
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-active-background: @dark-plum;
+    alternate-active-foreground: @active-foreground;
+    
+    separatorcolor:              @shadow-mist;
+    bordercolor:                 @shadow-mist;
+    border-color:                @shadow-mist;
+    
+    spacing:                     2;
+    background-color:            @deep-violet;
+    
+    highlight:                   @cosmic-purple;
+    subtle-text:                 @silver-mist;
+}
+
+window {
+    background-color: @deep-violet;
+    border:           1;
+    border-color:     @shadow-mist;
+    border-radius:    8;
+    padding:          15;
+    width:            600;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:        1;
+    border-color:  @shadow-mist;
+    padding:       8 0;
+    margin:        0 0 5 0;
+}
+
+textbox {
+    text-color: @silver-mist;
+    font:       "JetBrains Mono 12";
+}
+
+listview {
+    fixed-height: 0;
+    border:       1;
+    border-color: @shadow-mist;
+    spacing:      3;
+    scrollbar:    true;
+    padding:      8 0 0 0;
+    margin:       5 0;
+    dynamic:      true;
+}
+
+element {
+    border:  0;
+    padding: 8 12;
+    border-radius: 4;
+    margin:  2 0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-left:      3;
+    border-color:     @highlight;
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+    border-left:      3;
+    border-color:     @cosmic-purple;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+    border-left:      3;
+    border-color:     @twilight-blue;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+    font:             "Fira Sans 14";
+}
+
+scrollbar {
+    width:        6;
+    border:       0;
+    handle-color: @cosmic-purple;
+    handle-width: 8;
+    padding:      0;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @silver-mist;
+    padding:    10;
+    background: @dark-plum;
+    border-radius: 6;
+    margin:     0 0 10 0;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        "❯";
+    margin:     0 10 0 5;
+    text-color: @cosmic-purple;
+    font:       "Symbols Nerd Font 16";
+}
+
+entry {
+    text-color:   @silver-mist;
+    font:         "Fira Sans 14";
+    cursor:       text;
+    cursor-color: @royal-purple;
+}
+
+prompt {
+    text-color: @royal-purple;
+    font:       "Fira Sans Bold 14";
+}
+
+case-indicator {
+    text-color: @silver-mist;
+    margin:     0 0 0 10;
+}
+
+mode-switcher {
+    border:       2;
+    border-color: @shadow-mist;
+    padding:      8;
+    margin:       10 0 0 0;
+}
+
+button {
+    padding:      5 10;
+    border-radius: 4;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-bottom:    2;
+    border-color:     @royal-purple;
+}
