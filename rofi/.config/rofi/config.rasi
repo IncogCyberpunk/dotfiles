@@ -1,0 +1,23 @@
+@theme "~/.config/rofi/theme.rasi"
+
+
+
+// ~/.config/rofi/config.rasi
+configuration {
+    // show-icons: true;
+    terminal: "wezterm";
+    display-window: "Windows";
+    display-run: "Run";
+    display-drun: "Applications";
+    drun-display-format: "{icon} {name}";
+
+    timeout {
+        action: "kb-cancel";
+        delay:  0;
+    }
+    
+    filebrowser {
+        directories-first: true;
+        sorting-method:    "name";
+    }
+}

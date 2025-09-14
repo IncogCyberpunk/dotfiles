@@ -1,0 +1,223 @@
+/******************************************************************************
+ * ROFI Color theme - Arc Enhanced
+ * Colors adapted from: https://github.com/horst3180/arc-theme
+ * Author: Aakrisht Sharma Paudel (AakrishtSP)
+ * Github: @AakrishtSP
+ ******************************************************************************/
+* {
+    // Arc Light Color Palette
+    pure-white:     #FFFFFF;
+    light-gray:     #F5F5F5;
+    lighter-gray:   #FAFAFA;
+    slate-blue:     #525D76;
+    soft-gray:      #C2CAD0;
+    arc-blue:       #5294E2;
+    bright-blue:    #268BD2;
+    warm-red:       #DC322F;
+    sage-green:     #859900;
+    deep-purple:    #6C71C4;
+    ocean-cyan:     #2AA198;
+    border-light:   #E7E7E7;
+
+    // Derived Theme Variables
+    foreground:                  @slate-blue;
+    normal-foreground:           @slate-blue;
+    selected-normal-foreground:  @pure-white;
+    urgent-foreground:           @warm-red;
+    active-foreground:           @sage-green;
+    selected-urgent-foreground:  @pure-white;
+    selected-active-foreground:  @pure-white;
+    
+    background:                  @pure-white;
+    normal-background:           @pure-white;
+    selected-normal-background:  @arc-blue;
+    urgent-background:           @pure-white;
+    active-background:           @soft-gray;
+    selected-urgent-background:  @warm-red;
+    selected-active-background:  @sage-green;
+    
+    // Alternating pattern colors
+    alternate-normal-background: @light-gray;
+    alternate-normal-foreground: @slate-blue;
+    alternate-urgent-background: @light-gray;
+    alternate-active-background: @light-gray;
+    
+    separatorcolor:              @border-light;
+    bordercolor:                 @border-light;
+    border-color:                @border-light;
+    
+    spacing:                     2;
+    background-color:            @pure-white;
+    
+    highlight:                   @deep-purple;
+    subtle-text:                 @soft-gray;
+}
+
+window {
+    background-color: @pure-white;
+    border:           1;
+    border-color:     @border-light;
+    border-radius:    8;
+    padding:          15;
+    width:            600;
+}
+
+mainbox {
+    border:  0;
+    padding: 0;
+}
+
+message {
+    border:        1;
+    border-color:  @border-light;
+    padding:       8 0;
+    margin:        0 0 5 0;
+}
+
+textbox {
+    text-color: @slate-blue;
+    font:       "JetBrains Mono 12";
+}
+
+listview {
+    fixed-height: 0;
+    border:       1;
+    border-color: @border-light;
+    spacing:      3;
+    scrollbar:    true;
+    padding:      8 0 0 0;
+    margin:       5 0;
+    dynamic:      true;
+}
+
+element {
+    border:  0;
+    padding: 8 12;
+    border-radius: 4;
+    margin:  2 0;
+}
+
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+    vertical-align:   0.5;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-left:      3;
+    border-color:     @highlight;
+}
+
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+    border-left:      3;
+    border-color:     @deep-purple;
+}
+
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+    border-left:      3;
+    border-color:     @ocean-cyan;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @normal-foreground;
+    font:             "Fira Sans 14";
+}
+
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @urgent-foreground;
+    font:             "Fira Sans Bold 14";
+}
+
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @active-foreground;
+    font:             "Fira Sans 14";
+}
+
+scrollbar {
+    width:        6;
+    border:       0;
+    handle-color: @deep-purple;
+    handle-width: 8;
+    padding:      0;
+}
+
+inputbar {
+    spacing:    0;
+    text-color: @slate-blue;
+    padding:    10;
+    background: @light-gray;
+    border-radius: 6;
+    margin:     0 0 10 0;
+    children:   [ prompt, textbox-prompt-colon, entry, case-indicator ];
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    str:        "❯";
+    margin:     0 10 0 5;
+    text-color: @deep-purple;
+    font:       "Symbols Nerd Font 16";
+}
+
+entry {
+    text-color:   @slate-blue;
+    font:         "Fira Sans 14";
+    cursor:       text;
+    cursor-color: @arc-blue;
+}
+
+prompt {
+    text-color: @arc-blue;
+    font:       "Fira Sans Bold 14";
+}
+
+case-indicator {
+    text-color: @soft-gray;
+    margin:     0 0 0 10;
+}
+
+mode-switcher {
+    border:       2;
+    border-color: @border-light;
+    padding:      8;
+    margin:       10 0 0 0;
+}
+
+button {
+    padding:      5 10;
+    border-radius: 4;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+    border-bottom:    2;
+    border-color:     @arc-blue;
+}

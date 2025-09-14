@@ -1,0 +1,313 @@
+/**
+ * Arc-Dark Theme for Rofi
+ * Inspired by Arc GTK theme
+ * Author: Aakrisht Sharma Paudel (AakrishtSP)
+ * Original by: leofa
+ */
+
+* {
+    /* Arc-Dark color palette */
+    dark-base:       #2D303B;
+    dark-surface:    #404552;
+    light-surface:   #4B5162;
+    frost-text:      #F9F9F9;
+    muted-text:      #C4C7C5;
+    blue-accent:     #4084D6;
+    sky-accent:      #4491ED;
+    teal-accent:     #65A1FF;
+    red-alert:       #A54242;
+    border-subtle:   #7C8389;
+    separator-dark:  #1D1F21;
+    
+    /* Interface colors */
+    background:              @dark-base;
+    background-alt:          @dark-surface;
+    foreground:              @muted-text;
+    selected:                @blue-accent;
+    active:                  @teal-accent;
+    urgent:                  @red-alert;
+    
+    /* Derived colors */
+    background-color:        transparent;
+    border-color:            @border-subtle;
+    separatorcolor:          @separator-dark;
+    scrollbar-handle:        @light-surface;
+    
+    /* Text colors */
+    normal-background:       transparent;
+    normal-foreground:       @foreground;
+    alternate-normal-background: @background-alt;
+    alternate-normal-foreground: @foreground;
+    selected-normal-background:  @selected;
+    selected-normal-foreground:  @frost-text;
+    
+    active-background:       transparent;
+    active-foreground:       @active;
+    alternate-active-background: @background-alt;
+    alternate-active-foreground: @active;
+    selected-active-background:  @sky-accent;
+    selected-active-foreground:  @frost-text;
+    
+    urgent-background:       transparent;
+    urgent-foreground:       @urgent;
+    alternate-urgent-background: @background-alt;
+    alternate-urgent-foreground: @urgent;
+    selected-urgent-background:  @urgent;
+    selected-urgent-foreground:  @frost-text;
+}
+window {
+    location:         center;
+    anchor:           center;
+    fullscreen:       false;
+    width:            600px;
+    x-offset:         0px;
+    y-offset:         0px;
+    margin:           0px;
+    padding:          0px;
+    border:           2px solid;
+    border-radius:    8px;
+    border-color:     @border-color;
+    cursor:           "default";
+    background-color: @background;
+}
+
+mainbox {
+    enabled:          true;
+    spacing:          10px;
+    margin:           0px;
+    padding:          20px;
+    border:           0px solid;
+    border-radius:    0px;
+    border-color:     @border-color;
+    background-color: transparent;
+    children:         [ "inputbar", "message", "listview", "mode-switcher" ];
+}
+
+inputbar {
+    enabled:          true;
+    spacing:          10px;
+    margin:           0px;
+    padding:          8px 12px;
+    border:           1px solid;
+    border-radius:    6px;
+    border-color:     @border-color;
+    background-color: @background-alt;
+    text-color:       @foreground;
+    children:         [ "textbox-prompt-colon", "entry" ];
+}
+
+prompt {
+    enabled:          true;
+    background-color: transparent;
+    text-color:       @selected;
+}
+
+textbox-prompt-colon {
+    enabled:          true;
+    expand:           false;
+    str:              "❯";
+    background-color: transparent;
+    text-color:       @selected;
+}
+
+entry {
+    enabled:          true;
+    background-color: transparent;
+    text-color:       @foreground;
+    cursor:           text;
+    placeholder:      "Search...";
+    placeholder-color: @muted-text;
+}
+
+num-filtered-rows {
+    enabled:          true;
+    expand:           false;
+    background-color: transparent;
+    text-color:       @muted-text;
+}
+
+textbox-num-sep {
+    enabled:          true;
+    expand:           false;
+    str:              "/";
+    background-color: transparent;
+    text-color:       @muted-text;
+}
+
+num-rows {
+    enabled:          true;
+    expand:           false;
+    background-color: transparent;
+    text-color:       @muted-text;
+}
+
+case-indicator {
+    enabled:          true;
+    background-color: transparent;
+    text-color:       @muted-text;
+}
+
+listview {
+    enabled:          true;
+    columns:          1;
+    lines:            8;
+    cycle:            true;
+    dynamic:          true;
+    scrollbar:        true;
+    layout:           vertical;
+    reverse:          false;
+    fixed-height:     true;
+    fixed-columns:    true;
+    spacing:          4px;
+    margin:           0px;
+    padding:          0px;
+    border:           0px solid;
+    border-radius:    0px;
+    border-color:     @border-color;
+    background-color: transparent;
+    text-color:       @foreground;
+    cursor:           "default";
+}
+
+scrollbar {
+    handle-width:     8px;
+    handle-color:     @scrollbar-handle;
+    border-radius:    4px;
+    background-color: @background-alt;
+}
+
+element {
+    enabled:          true;
+    spacing:          8px;
+    margin:           0px;
+    padding:          8px;
+    border:           0px solid;
+    border-radius:    4px;
+    border-color:     @border-color;
+    background-color: transparent;
+    text-color:       @foreground;
+    cursor:           pointer;
+}
+
+element normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+
+element normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+
+element selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+
+element selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+
+element alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+element alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+
+element alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color:       inherit;
+    size:             18px;
+    cursor:           inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color:       inherit;
+    highlight:        inherit;
+    cursor:           inherit;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+}
+
+mode-switcher {
+    enabled:          true;
+    spacing:          10px;
+    margin:           0px;
+    padding:          0px;
+    border:           0px solid;
+    border-radius:    0px;
+    border-color:     @border-color;
+    background-color: transparent;
+    text-color:       @foreground;
+}
+
+button {
+    padding:          8px 16px;
+    border:           1px solid;
+    border-radius:    4px;
+    border-color:     @border-color;
+    background-color: @background-alt;
+    text-color:       @foreground;
+    cursor:           pointer;
+}
+
+button selected {
+    background-color: @selected;
+    text-color:       @selected-normal-foreground;
+}
+
+message {
+    enabled:          true;
+    margin:           0px;
+    padding:          8px;
+    border:           0px solid;
+    border-radius:    0px;
+    border-color:     @border-color;
+    background-color: @background-alt;
+    text-color:       @foreground;
+}
+
+textbox {
+    padding:          8px;
+    border:           0px solid;
+    border-radius:    0px;
+    border-color:     @border-color;
+    background-color: transparent;
+    text-color:       @foreground;
+    vertical-align:   0.5;
+    horizontal-align: 0.0;
+    highlight:        none;
+    placeholder-color: @muted-text;
+    blink:            true;
+    markup:           true;
+}
+
+error-message {
+    padding:          15px;
+    border:           2px solid;
+    border-radius:    8px;
+    border-color:     @urgent;
+    background-color: @background;
+    text-color:       @urgent;
+}
