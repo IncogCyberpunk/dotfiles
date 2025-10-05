@@ -16,6 +16,7 @@ config.color_scheme = 'Catppuccin Mocha'
 config.max_fps = 120
 config.hide_tab_bar_if_only_one_tab = true
 config.max_fps = 120
+config.warn_about_missing_glyphs = false
 
 config.window_close_confirmation = 'NeverPrompt'
 -- Finally, return the configuration to wezterm:

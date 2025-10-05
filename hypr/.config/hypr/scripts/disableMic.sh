@@ -1,4 +1,9 @@
-pactl set-source-mute @DEFAULT_SOURCE@ toggle 
+wpctl set-mute @DEFAULT_SOURCE@ toggle
 
-status=$(pactl get-source-mute @DEFAULT_SOURCE@ | grep -q 'yes' && echo ' <b>(MUTED)</b>' || echo ' <b>(UNMUTED)</b>')
+if wpctl get-volume @DEFAULT_SOURCE@ | grep -q "MUTED"; then
+    status="MUTED"
+else
+    status="UNMUTED"
+fi
+
 notify-send "Microphone Status" $status
