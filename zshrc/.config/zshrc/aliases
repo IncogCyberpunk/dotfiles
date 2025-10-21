@@ -99,3 +99,5 @@ alias cde="zoxide edit"
 # Termbin
 alias tb='nc termbin.com 9999'
 
+# auto-cpufreq
+alias acpu='auto-cpufreq'

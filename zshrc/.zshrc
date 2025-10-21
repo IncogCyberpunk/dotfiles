@@ -30,9 +30,11 @@ eval $(thefuck --alias)
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias fk)
 
-# case insensitive path-completion
+# Load the compinit for advanced configuration of zsh completions
 autoload -Uz +X compinit && compinit
+# Enable case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+# Enable menu selection for completions using arrow keys
 zstyle ':completion:*' menu select
 
 # Make sure zsh is at the directory u were last in while using yazi
