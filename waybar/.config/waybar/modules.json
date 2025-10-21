@@ -127,12 +127,11 @@
     "tooltip": false
   },
 
-  // Rofi Application Launcher
+  // Open nwg-menu
   "custom/appmenuicon": {
     "format": "",
-    "on-click": "pkill rofi || rofi -show drun ",
-    "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+    "on-click": "nwg-menu",
+    "tooltip-format": "Left: Open the application launcher"
   },
 
   // Power Menu
