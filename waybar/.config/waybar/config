@@ -24,26 +24,19 @@
 
     // Modules Left
     "modules-left": [
-        "custom/appmenuicon",
         "hyprland/workspaces",
     ],
 
     // Modules Center
     "modules-center": [
-        "clock",
+        "group/middle",
     ],
 
     // Modules Right    
     "modules-right": [
-        "custom/updates",
         "pulseaudio",
-        "backlight",
-        //"network",
         "battery", 
-        "power-profiles-daemon",
         "group/tools",
-        "tray",
         "custom/notification",
-        "custom/exit",
     ]
 }
