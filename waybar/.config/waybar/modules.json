@@ -20,10 +20,9 @@
       "default": ""
     },
     "persistent-workspaces": {
-             "*": 0 
-       }
+      "*": 0
+    }
   },
-
   // Taskbar
   "wlr/taskbar": {
     "format": "{icon}",
@@ -31,7 +30,10 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": ["Alacritty", "kitty"],
+    "ignore-list": [
+      "Alacritty",
+      "kitty"
+    ],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
     },
@@ -40,7 +42,6 @@
       "Foot Server": "Terminal"
     }
   },
-
   // Hyprland Window
   "hyprland/window": {
     "format": "{initialTitle}",
@@ -48,23 +49,19 @@
     "max-length": 60,
     "rewrite": {
       "Zen Browser": "Zen",
-      "kitty":"Kitty",
+      "kitty": "Kitty",
     },
     "separate-outputs": true
   },
-
-
   // Empty
   "custom/empty": {
     "format": ""
   },
-
-    // Tools
+  // Tools
   "custom/tools": {
     "format": "",
     "tooltip-format": "Tools"
   },
-
   // Cliphist
   "custom/cliphist": {
     "format": "",
@@ -73,7 +70,6 @@
     "on-click-middle": "sleep 0.1 && ~/.config/ml4w/scripts/cliphist.sh w",
     "tooltip-format": "Left: Open clipboard Manager\nRight: Delete an entry\nMiddle: Clear list"
   },
-
   // Updates Count
   "custom/updates": {
     "format": "  {}",
@@ -84,7 +80,6 @@
     "on-click": "~/.config/ml4w/settings/installupdates.sh",
     "on-click-right": "~/.config/ml4w/settings/software.sh"
   },
-
   // Wallpaper
   "custom/wallpaper": {
     "format": "",
@@ -92,21 +87,18 @@
     "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
     "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
   },
-
   // Waybar Themes
   "custom/waybarthemes": {
     "format": "",
     "on-click": "~/.config/waybar/themeswitcher.sh",
     "tooltip-format": "Select a waybar theme"
   },
-
   // Settings
   "custom/settings": {
     "format": "",
     "on-click": "sleep 0.1 && com.ml4w.dotfilessettings",
     "tooltip-format": "ML4W Dotfiles Settings"
   },
-
   // Keybindings
   "custom/keybindings": {
     "format": "",
@@ -119,21 +111,18 @@
     "on-click": "qalculate-gtk",
     "tooltip-format": "Open calculator"
   },
-
   // Windows VM
   "custom/windowsvm": {
     "format": "",
     "on-click": "~/.config/ml4w/scripts/launchvm.sh",
     "tooltip": false
   },
-
   // Open nwg-menu
-  "custom/appmenuicon": {
+  "custom/archicon": {
     "format": "",
     "on-click": "nwg-menu",
     "tooltip-format": "Left: Open the application launcher"
   },
-
   // Power Menu
   "custom/exit": {
     "format": "",
@@ -141,23 +130,18 @@
     "on-click-right": "hyprlock",
     "tooltip-format": "Left: Power menu\nRight: Lock screen"
   },
-
   // SwayNC
   "custom/notification": {
     "tooltip-format": "Left: Notifications\nRight: Do not disturb",
     "format": "{icon}",
     "format-icons": {
-      "notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "none": "",
-      "dnd-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "dnd-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "dnd-none": "",
-      "inhibited-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "inhibited-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "inhibited-none": "",
-      "dnd-inhibited-notification":
-        "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
+      "dnd-inhibited-notification": "<span rise='8pt'><span foreground='red'><sup></sup></span></span>",
       "dnd-inhibited-none": ""
     },
     "return-type": "json",
@@ -167,15 +151,6 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
-
-  // Hyprshade
-  "custom/hyprshade": {
-    "format": "",
-    "tooltip-format": "Toggle Screen Shader",
-    "on-click": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh",
-    "on-click-right": "sleep 0.5; ~/.config/hypr/scripts/hyprshade.sh rofi"
-  },
-
   // Hypridle inhibitor
   "custom/hypridle": {
     "format": "",
@@ -186,7 +161,6 @@
     "exec": "~/.config/hypr/scripts/hypridle.sh status",
     "on-click": "~/.config/hypr/scripts/hypridle.sh toggle"
   },
-
   // Keyboard State
   "keyboard-state": {
     "numlock": true,
@@ -197,13 +171,11 @@
       "unlocked": ""
     }
   },
-
   // System tray
   "tray": {
     "icon-size": 21,
     "spacing": 10
   },
-
   // Clock
   "clock": {
     "format": "{:%H:%M | %a | %b %d}",
@@ -211,25 +183,21 @@
     "timezone": "",
     "tooltip": false
   },
-
   // System
   "custom/system": {
     "format": "",
     "tooltip": false
   },
-
   // CPU
   "cpu": {
     "format": "/ C {usage}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
-
   // Memory
   "memory": {
     "format": "/ M {}% ",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
-
   // Harddisc space used
   "disk": {
     "interval": 30,
@@ -237,11 +205,9 @@
     "path": "/",
     "on-click": "~/.config/ml4w/settings/system-monitor.sh"
   },
-
   "hyprland/language": {
     "format": "/ K {short}"
   },
-
   // Group Hardware
   "group/hardware": {
     "orientation": "inherit",
@@ -250,26 +216,36 @@
       "children-class": "not-memory",
       "transition-left-to-right": false
     },
-    "modules": ["custom/system", "disk", "cpu", "memory", "hyprland/language"]
+    "modules": [
+      "custom/system",
+      "disk",
+      "cpu",
+      "memory",
+      "hyprland/language"
+    ]
   },
-
+  "group/middle": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/archicon",
+      "clock"
+    ]
+  },
   // Group Tools
   "group/tools": {
-    "orientation": "inherit",
+    "orientation": "horizontal",
     "drawer": {
       "transition-duration": 300,
       "children-class": "not-memory",
-      "transition-left-to-right": false
+      "transition-left-to-right": true
     },
     "modules": [
       "custom/tools",
-      "custom/cliphist",
-      "custom/hypridle",
-      "custom/hyprshade"
+      "backlight",
+      "tray",
+      "custom/exit"
     ]
   },
-
-
   // Customize the system tray
   "system_tray": {
     "orientation": "inherit",
@@ -286,7 +262,6 @@
       "nm-applet"
     ]
   },
-
   // Network
   "network": {
     "format": "{ifname}",
@@ -301,7 +276,6 @@
     "on-click": "kitty --title 'Network-Manager' -e nmtui ",
     "on-click-right": "",
   },
-
   // Battery
   "battery": {
     "states": {
@@ -315,9 +289,14 @@
     "format-alt": "{icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
   },
-
   // Power Profiles Daemon
   "power-profiles-daemon": {
     "format": "{icon} ",
@@ -330,7 +309,6 @@
       "power-saver": ""
     }
   },
-
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -347,11 +325,14 @@
       "phone": " ",
       "portable": " ",
       "car": " ",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pwvucontrol"
   },
-
   // Bluetooth
   "bluetooth": {
     "format": " {status}",
@@ -361,14 +342,13 @@
     "on-click": "blueman-manager",
     "format-no-controller": ""
   },
-
   // Other
   "user": {
     "format": "{user}",
     "interval": 60,
     "icon": false
   },
-// backlight:
+  // backlight:
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": [
@@ -389,4 +369,5 @@
       ""
     ],
     "scroll-step": 1
-  }}
+  }
+}

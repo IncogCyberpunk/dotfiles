@@ -18,8 +18,11 @@ return {
       columns = {
     "icon",
   },
-
+      -- See `:h oil-actions` for a list of all actions
       keymaps = {
+        -- Close the oil buffer 
+        ["q"] = { "actions.close",opts={ exit_if_last_buf=true}, mode = "n" },
+        -- Show help for oil keymaps
         ["g?"] = { "actions.show_help", mode = "n" },
         -- Go up a directory
         ["h"] = { "actions.parent", mode = "n" },
@@ -43,15 +46,17 @@ return {
         ["."] = { "actions.toggle_hidden", mode = "n" },
         -- Toggle the trash folder
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
-      }, -- Configuration for the floating keymaps help window
+        -- Discard all changes made to the oil buffer
+        ["ud"] = { "actions.discard_all_changes", mode = "n" },
+      }, 
+      -- Configuration for the floating keymaps help window
       keymaps_help = {
         border = "rounded",
       },
     })
 
+    -- Keymap to open oil.nvim in normal mode using '-'
     vim.keymap.set('n', '-', function() require('oil').open_float() end, { desc = "Open oil.nvim from normal mode using keybinds" })
-    vim.keymap.set('n', 'ud', function() require('oil').discard_all_changes() end, { desc = "Discard all changes made to oil buffers" })
-    vim.keymap.set('n', 'q', function() require('oil').close({exit_if_last_buf = true}) end, { desc = "Discard all changes made to oil buffers" })
 
   end
 }
