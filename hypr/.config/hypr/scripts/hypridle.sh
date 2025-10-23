@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #  _   _                  _     _ _
 # | | | |_   _ _ __  _ __(_) __| | | ___
 # | |_| | | | | '_ \| '__| |/ _` | |/ _ \
@@ -19,7 +19,9 @@ fi
 if [[ "$1" == "toggle" ]]; then
     if pgrep -x "$SERVICE" >/dev/null; then
         killall hypridle
+        notify-send "Hypridle" "Hypridle has been stopped."
     else
         hypridle
+        notify-send "Hypridle" "Hypridle has been started."
     fi
 fi
