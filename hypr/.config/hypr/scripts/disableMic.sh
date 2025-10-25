@@ -1,9 +1,11 @@
+#!/usr/bin/env bash
+
 wpctl set-mute @DEFAULT_SOURCE@ toggle
 
-if wpctl get-volume @DEFAULT_SOURCE@ | grep -q "MUTED"; then
+if wpctl get-volume @DEFAULT_SOURCE@ | grep -iq "MUTED"; then
     status="MUTED"
 else
     status="UNMUTED"
 fi
 
-notify-send "Microphone Status" $status
+notify-send "Microphone Status" $status -t 700

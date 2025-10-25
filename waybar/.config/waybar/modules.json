@@ -122,7 +122,7 @@
   },
   // Clock
   "clock": {
-    "format": "{:%H:%M | %a | %b %d}",
+    "format": "{:%H:%M  %a  %b %d}",
     "timezone": "",
     "tooltip": false
   },

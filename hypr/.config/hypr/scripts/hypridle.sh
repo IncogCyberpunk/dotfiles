@@ -21,7 +21,7 @@ if [[ "$1" == "toggle" ]]; then
         killall hypridle
         notify-send "Hypridle" "Hypridle has been stopped."
     else
-        hypridle
+        hypridle & 
         notify-send "Hypridle" "Hypridle has been started."
     fi
 fi

@@ -25,11 +25,6 @@ setopt SHARE_HISTORY
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# Use thefuck package for correcting last console command
-eval $(thefuck --alias)
-# You can use whatever you want as an alias, like for Mondays:
-eval $(thefuck --alias fk)
-
 # Load the compinit for advanced configuration of zsh completions
 autoload -Uz +X compinit && compinit
 # Enable case insensitive path-completion
