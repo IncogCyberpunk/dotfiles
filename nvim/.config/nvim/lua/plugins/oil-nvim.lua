@@ -46,8 +46,6 @@ return {
         ["."] = { "actions.toggle_hidden", mode = "n" },
         -- Toggle the trash folder
         ["g\\"] = { "actions.toggle_trash", mode = "n" },
-        -- Discard all changes made to the oil buffer
-        ["ud"] = { "actions.discard_all_changes", mode = "n" },
       }, 
       -- Configuration for the floating keymaps help window
       keymaps_help = {
