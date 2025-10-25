@@ -10,6 +10,15 @@ local config = wezterm.config_builder()
 config.initial_cols = 120
 config.initial_rows = 28
 
+config.keys = {
+    -- Disable the default <A-Enter> behavior
+    {
+        key='Enter',
+        mods="ALT",
+        action= wezterm.action.DisableDefaultAssignment
+    },
+}
+
 -- or, changing the font size and color scheme.
 config.font_size = 12
 config.color_scheme = 'Catppuccin Mocha'

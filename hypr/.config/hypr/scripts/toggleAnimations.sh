@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
- animationsState=$(hyprctl getoption animations:enabled | awk '/int/ {print $2}')
+animationsState=$(hyprctl getoption animations:enabled | awk '/int/ {print $2}')
 
 if [[ "$animationsState" -eq 1 ]]  ; then
     hyprctl --batch "\
