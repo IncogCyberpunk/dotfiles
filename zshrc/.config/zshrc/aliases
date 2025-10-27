@@ -89,7 +89,7 @@ function rdir(){
     if [[ -z $1 ]]; then
         fd -d 1 -t d | fzf -m | xargs -or -I {} rm -rIv {}
     else
-        rm -rIv $1
+        rm -rfIv $1
     fi
 }
 
@@ -101,3 +101,6 @@ alias tb='nc termbin.com 9999'
 
 # auto-cpufreq
 alias acpu='auto-cpufreq'
+
+# Get nepali date
+alias nepdate='~/sysScripts/fetchNepaliDate.sh'
