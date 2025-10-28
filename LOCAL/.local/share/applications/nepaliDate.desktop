@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Nepali Date
+Exec=/home/incog/sysScripts/fetchNepaliDate.sh

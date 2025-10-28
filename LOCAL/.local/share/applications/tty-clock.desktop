@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=tty-clock
+Exec=wezterm start tty-clock -C 2 -s -D
+
+
