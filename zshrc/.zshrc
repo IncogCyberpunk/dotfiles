@@ -1,4 +1,3 @@
-# Enable VI keybindings in zsh instead of EMACS (default) keybindings
 bindkey -v # bindkey -e (default)
 
 export TERM='xterm-256color' # to enable 256 colors in terminal 
@@ -57,7 +56,7 @@ for file in $HOME/dotfiles/zshrc/.config/zshrc/plugins/*; do
 done
 
 #Initialize oh-my-posh
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/theme.omp.toml)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/spaceship.json)"
 
 # Source zsh-autosuggestions 
 source ~/.config/zshrc/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
