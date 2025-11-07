@@ -20,6 +20,10 @@ config.keys = {
 }
 
 -- or, changing the font size and color scheme.
+config.font = wezterm.font {
+    family = 'JetBrainsMono NF',
+    weight = 'DemiBold'
+}
 config.font_size = 12
 config.color_scheme = 'Catppuccin Mocha'
 config.max_fps = 120
