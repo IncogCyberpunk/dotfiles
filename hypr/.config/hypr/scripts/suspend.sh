@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 playerctl -a pause
-hyprctl dispatch exec swaylock 
+hyprctl dispatch exec hyprlock 
 systemctl suspend

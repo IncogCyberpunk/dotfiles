@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-pkill -x swaylock
-hyprctl dispatch exec swaylock && sleep 0.5 && hyprctl dispatch dpms off    
+if pgrep -x hyprlock ; then
+    pkill -x hyprlock
+fi
+hyprctl dispatch exec hyprlock && sleep 0.5 && hyprctl dispatch dpms off    
