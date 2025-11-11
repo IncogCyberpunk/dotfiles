@@ -8,7 +8,6 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-
     -- NOTE: Keybindings inside the keys section are global keybindings and are a method to specify custom keybindings , a functionality provided solely by Lazy.nvim
     { "<C-e>", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
   },
@@ -16,16 +15,18 @@ return {
     require('nvim-tree').setup {
       -- NOTE: This function runs when a buffer (like NvimTree) is attached to a window.
       on_attach = function(bufnumber)
+        -- NOTE: Using the `nvim-tree-api` to create custom keybindings
         local api = require("nvim-tree.api")
 
         local function opts(desc)
           return { desc = "NvimTree: " .. desc, buffer = bufnumber, silent = true, noremap = true }
         end
+        
 
         -- NOTE: Keeping all the default keybindings
         api.config.mappings.default_on_attach(bufnumber)
 
-        -- Custom keybindings using the nvim-tree-api are  added here
+        -- Custom keybindings using the `nvim-tree-api` are  added here
         -- NOTE: These are keybindigs for buffer so we use vim.keymap.set
         vim.keymap.set("n", "<C-e>", api.tree.close, opts("Map the default <C-e> keybinding to close the tree"))
 
@@ -37,11 +38,14 @@ return {
 
         vim.keymap.set("n", "H", api.tree.collapse_all, opts("Collapse All"))
 
-        vim.keymap.set("n", "<M-h>", api.tree.toggle_hidden_filter, opts("Toggle Dotfiles"))
+        vim.keymap.set("n", "<C-h>", api.tree.toggle_hidden_filter, opts("Toggle Dotfiles"))
       end,
 
+      hijack_cursor = true,
+      disable_netrw = true,
       filters = {
         dotfiles = true,
+        git_ignored = false,
       },
 
     }
