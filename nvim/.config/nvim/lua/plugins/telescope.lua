@@ -56,11 +56,11 @@ return {
       },
       pickers = {
         find_files = {
-          file_ignore_patterns = { 'node_modules', '.git', '.venv'},
+          file_ignore_patterns = { 'node_modules', '^.git', '.venv' },
           hidden = true,
         },
         live_grep = {
-          file_ignore_patterns = { 'node_modules', '.git', '.venv'},
+          file_ignore_patterns = { 'node_modules', '.git', '.venv' },
           additional_args = function(_)
             return { '--hidden' }
           end,
@@ -83,10 +83,12 @@ return {
     vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
     vim.keymap.set('n', '<leader>re', builtin.registers, { desc = 'List the registers' })
     vim.keymap.set('n', '<leader>kt', builtin.colorscheme, { desc = 'Change Themes' })
-    vim.keymap.set({'n','t'}, '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+    vim.keymap.set({ 'n', 't' }, '<leader>sf', function()
+      require('telescope.builtin').find_files({ no_ignore_parent = true })
+    end, { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
     vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-    -- vim.keymap.set('n', '<leader>lg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+    vim.keymap.set('n', '<leader>lg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
@@ -130,7 +132,7 @@ return {
       end
 
       if vim.fn.executable("fd") == 0 then
-        vim.notify("Warning: 'fd' is not installed. Telescope directory search will not work.",vim.log.levels.WARN)
+        vim.notify("Warning: 'fd' is not installed. Telescope directory search will not work.", vim.log.levels.WARN)
         return
       end
 
@@ -139,7 +141,7 @@ return {
         attach_mappings = open_nvim_tree,
       })
     end
-    vim.keymap.set("n", "<leader>fd", find_directory_and_focus, { desc = "Find Directory and Focus in NvimTree" })
 
+    vim.keymap.set("n", "<leader>fd", find_directory_and_focus, { desc = "Find Directory and Focus in NvimTree" })
   end,
 }
