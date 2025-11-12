@@ -88,7 +88,8 @@ return {
     end, { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader>ss', builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
     vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-    vim.keymap.set('n', '<leader>lg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+    -- TODO: Use ripgrep instead of live_grep?
+    vim.keymap.set('n', '<leader>rg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
     vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
     vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
