@@ -10,16 +10,17 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
 fi
 
 TOUCHPAD_STATUS="$XDG_RUNTIME_DIR/touchpad.status"
+iconsDir="$HOME/.config/swaync/icons"
 
 enable_touchpad() {
   printf "true" >"$TOUCHPAD_STATUS"
-  notify-send -u low -t 700 "Touchpad Switched ON"
+  notify-send -u low -t 700 -h string:x-canonical-private-synchronous:touchpad-status -i $iconsDir/touchpad-enable.png  "Touchpad Switched ON"
   hyprctl keyword $TOUCHPAD_VARIABLE "true" -r
 }
 
 disable_touchpad() {
   printf "false" >"$TOUCHPAD_STATUS"
-  notify-send -u low -t 700 "Touchpad Switched OFF"
+  notify-send -u low -t 700 -h string:x-canonical-private-synchronous:touchpad-status -i $iconsDir/touchpad-disable.png  "Touchpad Switched OFF"
   hyprctl keyword $TOUCHPAD_VARIABLE "false" -r
 }
 
