@@ -3,4 +3,4 @@ if pgrep -x hyprlock ; then
     pkill -x hyprlock
 fi
 
-sleep 1 && hyprctl dispatch dpms off && hyprlock
+hyprctl dispatch exec hyprlock && sleep 1 && hyprctl dispatch dpms off 
