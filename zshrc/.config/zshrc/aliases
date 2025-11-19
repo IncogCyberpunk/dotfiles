@@ -104,3 +104,8 @@ alias acpu='auto-cpufreq'
 
 # Get nepali date
 alias nepdate='~/sysScripts/fetchNepaliDate.sh'
+
+# Search who provides the command in Arch Linux 
+pkgwho(){
+    sudo pacman -Qo $(which $1)
+}

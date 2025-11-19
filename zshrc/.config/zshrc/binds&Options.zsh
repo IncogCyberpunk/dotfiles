@@ -41,3 +41,9 @@ function zle-line-init {
 }
 
 zle -N zle-line-init
+
+
+# Allow comments 
+setopt interactivecomments
+setopt AUTO_CD
+setopt CORRECT
