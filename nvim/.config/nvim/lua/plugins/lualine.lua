@@ -40,8 +40,7 @@ return {
     require('lualine').setup {
       options = {
         icons_enabled = true,
-        theme = 'nord', -- Set theme based on environment variable
-        -- Some useful glyphs:
+        theme = 'catppuccin', -- Set theme based on environment variable
         -- https://www.nerdfonts.com/cheat-sheet
         --        
         section_separators = { left = '', right = '' },

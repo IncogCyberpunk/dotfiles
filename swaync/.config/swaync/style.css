@@ -17,6 +17,7 @@
   all: unset;
   font-size: 14px;
   transition: 200ms;
+  border: none;
 }
 
 scrollbar  range  trough  slider{
@@ -36,11 +37,9 @@ trough highlight {
   border-radius: 12.6px;
   margin: 10px;
   background: #181825;
-  color: @text;
 }
 
 .notification-background .notification {
-  border: 1px solid @rosewater ;
   padding: 7px;
   border-radius: 12.6px;
 }
@@ -93,7 +92,6 @@ trough highlight {
 
 .notification .notification-action {
   border-radius: 7px;
-  color: @text;
   box-shadow: inset 0 0 0 1px #45475a;
   margin: 4px;
   padding: 8px;
