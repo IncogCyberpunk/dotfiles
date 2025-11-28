@@ -8,20 +8,18 @@ wezterm start -- zsh -c '
 # NOTE: ; => used to perform command chaining in tmux, \; => used to escape the ; character
 
 # Create a session for all the different configs 
-tmux new -d -s Configs -n NvimConfigs "nvim ~/.config/nvim/" \; \
-    neww -n HyprConfigs "nvim ~/.config/hypr/" \;  \
-    neww -n TmuxConfigs "nvim ~/.config/tmux/" \; \
-    neww -n WeztermConfigs "nvim ~/.config/wezterm/";
+tmux new -d -s Configs -n NvimConfigs -c "$HOME/.config/nvim/" "nvim $HOME/.config/nvim/init.lua"  \; \
+    neww -n HyprConfigs -c "$HOME/.config/hypr/" "nvim $HOME/.config/hypr/hyprland.conf" \;  \
+    neww -n TmuxConfigs -c "$HOME/.config/tmux/" "nvim $HOME/.config/tmux/tmux.conf" \; \
+    neww -n WeztermConfigs -c "$HOME/.config/wezterm/" "nvim $HOME/.config/wezterm/wezterm.lua";
 
 # Create a session for the Next.js project 
-tmux new -d -s next\.js -n nextApp "nvim /mnt/Aayush/WEB/NEXT.JS/" \; \
-    neww -n ForServer \; \
-    send-keys "cd /mnt/Aayush/WEB/NEXT.JS/ && clear" Enter \;
+tmux new -d -s WEB -n web -c "/mnt/Aayush/WEB/" "nvim /mnt/Aayush/WEB/"  \; \
 
-tmux a -t Configs \; \
-select-window -t 1 \; \
-neww \; send-keys "hyprctl dispatch movetoworkspacesilent 3 && exit" Enter \;
-
+tmux neww -t Configs \; \
+    a -t Configs \; \
+    send-keys "hyprctl dispatch movetoworkspacesilent 3" Enter \; \
+    send-keys "clear" Enter \;
 '
 
 # NOTE: The below line creates a new window and executes the command in zsh , because the focus is captured by the tmux due to attaching, so running commands outside of tmux is not possible 
