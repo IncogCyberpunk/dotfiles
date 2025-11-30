@@ -1,4 +1,6 @@
+.gitignore
 customDns/etc
 systemScripts
 hypr/.config/hypr/monitors.conf
 waypaper/.config/waypaper/config.ini
+hypr/.config/hypr/scripts/tmuxSetupLocal.sh
