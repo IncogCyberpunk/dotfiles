@@ -15,7 +15,7 @@ tmux new -d -s Configs -n NvimConfigs -c "$HOME/.config/nvim/" "nvim $HOME/.conf
 
 tmux neww -t Configs \; \
     a -t Configs \; \
-    send-keys "hyprctl dispatch movetoworkspacesilent 3 && clear" Enter \; 
+    send-keys "hyprctl dispatch movetoworkspacesilent 3&& clear" Enter ; 
 '
 
 # NOTE: The below line creates a new window and executes the command in zsh , because the focus is captured by the tmux due to attaching, so running commands outside of tmux is not possible 
