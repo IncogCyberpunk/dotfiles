@@ -21,10 +21,11 @@ config.keys = {
 
 -- or, changing the font size and color scheme.
 config.font = wezterm.font {
-    family = 'JetBrainsMono NF',
-    weight = 'DemiBold'
+    family = 'JetBrainsMono NFP SemiBold',
+    style = 'Italic'
+
 }
-config.font_size = 12
+config.font_size = 11
 config.color_scheme = 'Catppuccin Mocha'
 config.max_fps = 120
 config.hide_tab_bar_if_only_one_tab = true

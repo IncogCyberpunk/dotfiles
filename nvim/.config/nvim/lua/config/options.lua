@@ -7,7 +7,7 @@ vim.o.autoread = true -- Automatically read files when changed outside of Neovim
 
 vim.wo.number = true -- Make line numbers default (default: false)
 vim.o.relativenumber = true -- Set relative numbered lines (default: false)
--- vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. (default: '')
+vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. (default: '')
 vim.o.wrap = true -- Display lines as one long line (default: true)
 vim.o.linebreak = true -- Companion to wrap, don't split words (default: false)
 vim.opt.mouse = "nv"  -- Enable mouse mode (default: '') vim.o.autoindent = true -- Copy indent from current line when starting new one (default: true)
@@ -54,3 +54,6 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "r", "o" })
   end,
 })
+
+
+vim.opt.winborder="rounded"
