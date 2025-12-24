@@ -8,8 +8,7 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    -- NOTE: Keybindings inside the keys section are global keybindings and are a method to specify custom keybindings , a functionality provided solely by Lazy.nvim
-    { "<C-e>", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree" },
+    -- NOTE: This `keys` spec allows for lazy loading on ceratin keymaps
   },
   config = function()
     require('nvim-tree').setup {
@@ -28,7 +27,6 @@ return {
 
         -- Custom keybindings using the `nvim-tree-api` are  added here
         -- NOTE: These are keybindigs for buffer so we use vim.keymap.set
-        vim.keymap.set("n", "<C-e>", api.tree.close, opts("Map the default <C-e> keybinding to close the tree"))
 
         vim.keymap.set("n", "l", api.node.open.edit, opts("Navigate Inside "))
 
@@ -40,6 +38,8 @@ return {
 
         vim.keymap.set("n", "<C-h>", api.tree.toggle_hidden_filter, opts("Toggle Dotfiles"))
       end,
+
+      vim.keymap.set({"n"}, "<C-n>", ":NvimTreeToggle<CR>", { desc="Toggle the tree",noremap = true, silent = true}),
 
       hijack_cursor = true,
       disable_netrw = true,

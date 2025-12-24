@@ -1,6 +1,8 @@
-require  'config.options'
-require  'config.keymaps'
-require  'config.snippets'
+require 'config.options'
+require 'config.keymaps'
+require 'config.misc'
+require 'config.autocommands'
+require 'lsp.lsp-conf'
 
 -- set up the lazy plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -15,8 +17,8 @@ end
 -- Puts the lazy into runtimepath for neovim
 vim.opt.runtimepath:prepend(lazypath)
 
--- NOTE: This way of modularizing plugins is provided by the lazy.nvim plugin manager , where lazy.nvim first checks if plugins.lua exists else if it's a directory then it auto. loads all .lua files in lua/plugin/ 
-require('lazy').setup('plugins')
+-- NOTE: This way of modularizing plugins is provided by the lazy.nvim plugin manager , where lazy.nvim first checks if plugins.lua exists else if it's a directory then it auto. loads all .lua files in lua/plugin/
+require('lazy').setup 'plugins'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

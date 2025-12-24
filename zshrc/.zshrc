@@ -1,6 +1,5 @@
 bindkey -v # bindkey -e (default)
 
-export TERM='xterm-256color' # to enable 256 colors in terminal 
 export EDITOR=nvim
 export QT_SElECT=6
 export QT_QPA_PLATFORMTHEME=qt6ct
