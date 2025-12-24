@@ -1,10 +1,15 @@
-local save_group = vim.api.nvim_create_augroup('SaveGroup', { clear = true })
-
 -- Auto-format on save
-vim.api.nvim_create_autocmd('BufWriteCmd', {
+local save_group = vim.api.nvim_create_augroup('SaveGroup', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*',
   callback = function()
-    vim.lsp.buf.format()
-    vim.cmd 'w'
+    -- Check filetype as well, as Oil sets filetype to 'oil'
+    local ft = vim.bo.filetype
+    local bt = vim.bo.buftype
+
+    if ft ~= 'oil' and ft ~= 'NvimTree' and bt ~= 'acwrite' then
+      vim.lsp.buf.format({ async = false })
+    end
   end,
   group = save_group,
 })
