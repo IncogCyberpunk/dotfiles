@@ -2,7 +2,7 @@ require 'config.options'
 require 'config.keymaps'
 require 'config.misc'
 require 'config.autocommands'
-require 'lsp.lsp-conf'
+require 'lspConfig'
 
 -- set up the lazy plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
