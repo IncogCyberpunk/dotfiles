@@ -2,7 +2,7 @@
   "name": "custom-snippets",
   "contributes": {
     "snippets": [
-      {"language":["javascript","typescript"], "path":"./js-ts.json"}
+      {"language":["javascript","typescript","javascriptreact","typescriptreact"], "path":"./js-ts.json"}
     ]
   }
 }

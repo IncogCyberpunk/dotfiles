@@ -23,7 +23,7 @@ config.keys = {
 config.font = wezterm.font_with_fallback({
 	{
 		family = "JetBrainsMono NF",
-		weight = 500,
+		weight = 600,
 		style = "Italic",
 	},
 	"Lohit Nepali",
