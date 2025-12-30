@@ -14,7 +14,6 @@ return {
           dismiss = '<C-e>',
         },
       },
-      panel = { enabled = false },
     }
   end,
   keys = {

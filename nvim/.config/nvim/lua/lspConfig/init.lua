@@ -1,5 +1,5 @@
 -- NOTE: use conform.nvim & nvim-lint for formatters and linters that don't have an LSP server
-vim.lsp.enable { 'lua_ls', 'ts_ls', 'tailwindcss', 'pyright', 'clangd', 'eslint', 'stylua' }
+vim.lsp.enable { 'lua_ls', 'hyprls', 'ts_ls', 'tailwindcss', 'pyright', 'clangd', 'eslint', 'stylua' }
 
 -- NOTE: Enable built-in LSP-based completion
 vim.api.nvim_create_autocmd('LspAttach', {

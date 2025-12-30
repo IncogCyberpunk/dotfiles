@@ -23,12 +23,12 @@ config.keys = {
 config.font = wezterm.font_with_fallback({
 	{
 		family = "JetBrainsMono NF",
-		weight = 600,
-		style = "Italic",
+		weight = 700,
+		-- style = "Italic",
 	},
 	"Lohit Nepali",
 })
-config.font_size = 11
+config.font_size = 11.5
 config.color_scheme = "Catppuccin Mocha"
 config.max_fps = 120
 config.hide_tab_bar_if_only_one_tab = true

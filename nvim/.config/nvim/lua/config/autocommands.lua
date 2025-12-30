@@ -6,9 +6,20 @@ vim.api.nvim_create_autocmd('BufWrite', {
     local ft = vim.bo.filetype
     local bt = vim.bo.buftype
 
-    if ft ~= 'oil' and ft ~= 'NvimTree' and bt ~= 'acwrite' then
-      vim.lsp.buf.format { async = false }
+    local ignore_filetypes = { 'oil', 'markdown', 'text', 'NvimTree', 'hyprlang' }
+
+    -- if the filetype is in the ignore list, return
+    for _, file in ipairs(ignore_filetypes) do
+      if bt == 'acwrite' then
+        return
+      end
+
+      if ft == file then
+        return
+      end
     end
+
+    vim.lsp.buf.format { async = false }
   end,
   group = save_group,
 })
