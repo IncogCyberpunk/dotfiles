@@ -12,7 +12,6 @@ if (pgrep spotify > /dev/null) ; then
         spotify
     fi
 else
-    hyprctl dispatch exec [workspace 4 silent] spotify 
-    sleep 1
+    hyprctl dispatch exec "[workspace 4 silent] spotify"
 fi
 
