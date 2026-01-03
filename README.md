@@ -1,4 +1,4 @@
-# Hyprland Dotfiles HI There How are you? 
+# Hyprland Dotfiles
 
 This repository contains my personal configuration files (dotfiles) for [Hyprland](https://hyprland.org/), a dynamic tiling Wayland compositor. These configurations are tailored to my workflow and preferences, but feel free to use, modify, or adapt them to suit your needs!
 
