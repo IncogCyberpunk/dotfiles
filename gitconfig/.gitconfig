@@ -1,0 +1,14 @@
+[user]
+	email = incogcyberpunk@gmail.com
+	name = IncogCyberpunk
+[safe]
+	directory = /mnt/Aayush
+[init]
+	defaultBranch = main
+[core]
+	compression = 0
+[sendemail]
+	smtpserver = smtp.gmail.com
+	smtpserverport = 465
+	smtpencryption = ssl
+	smtpuser = incogcyberpunk@gmail.com
