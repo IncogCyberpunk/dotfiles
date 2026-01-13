@@ -1,6 +1,7 @@
 bindkey -v # bindkey -e (default)
 
 export EDITOR=nvim
+export MANPAGER="nvim +Man!" #NOTE: Use nvim as manpager, the `+`, means execute the command after opening nvim 
 export QT_SElECT=6
 export QT_QPA_PLATFORMTHEME=qt6ct
 # Allow comments 

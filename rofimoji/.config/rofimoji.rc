@@ -1,0 +1,4 @@
+prompt "Emoji"
+skin-tone neutral
+action clipboard
+

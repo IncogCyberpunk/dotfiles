@@ -164,13 +164,13 @@
   // Battery
   "battery": {
     "states": {
-      // "good": 95,
+      "good": 95,
       "warning": 30,
       "critical": 15
     },
     "format": "{icon}{capacity}%",
-    "format-charging": "{capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂅 {capacity}%",
     "format-alt": "{icon} {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
@@ -197,11 +197,11 @@
   // Pulseaudio
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}% {format_source}",
-    "format-bluetooth": " {volume}% | {format_source}",
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": " {volume}% |{format_source}",
     "format-bluetooth-muted": " 0% {format_source}",
     "format-muted": " 0% {format_source}",
-    "format-source": " {volume}%",
+    "format-source": "{volume}%",
     "format-source-muted": "  0%",
     "format-icons": {
       "headphone": " ",

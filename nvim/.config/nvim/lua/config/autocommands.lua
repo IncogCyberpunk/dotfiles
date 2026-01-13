@@ -19,6 +19,21 @@ vim.api.nvim_create_autocmd('BufWrite', {
       end
     end
 
+    -- Check if any LSP client other than 'copilot' is attached
+    local clients = vim.lsp.get_clients()
+    local has_lsp = false
+
+    for _, client in pairs(clients) do
+      if client.name ~= 'copilot' then
+        has_lsp = true
+        break
+      end
+    end
+
+    if not has_lsp then
+      return
+    end
+
     vim.lsp.buf.format { async = false }
   end,
   group = save_group,

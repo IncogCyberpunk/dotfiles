@@ -2,7 +2,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- Enable syncing of buffers 
+-- Enable syncing of buffers
 vim.o.autoread = true -- Automatically read files when changed outside of Neovim (default: false)
 
 vim.wo.number = true -- Make line numbers default (default: false)
@@ -10,7 +10,7 @@ vim.o.relativenumber = true -- Set relative numbered lines (default: false)
 vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. (default: '')
 vim.o.wrap = true -- Display lines as one long line (default: true)
 vim.o.linebreak = true -- Companion to wrap, don't split words (default: false)
-vim.opt.mouse = "nv"  -- Enable mouse mode (default: '') vim.o.autoindent = true -- Copy indent from current line when starting new one (default: true)
+vim.opt.mouse = 'nv' -- Enable mouse mode (default: '') vim.o.autoindent = true -- Copy indent from current line when starting new one (default: true)
 vim.o.ignorecase = true -- Case-insensitive searching UNLESS \C or capital in search (default: false)
 vim.o.smartcase = true -- Smart case (default: false)
 vim.o.shiftwidth = 4 -- The number of spaces inserted for each indentation (default: 8)
@@ -48,12 +48,16 @@ vim.opt.formatoptions:remove { 'c', 'r', 'o' } -- Don't insert the current comme
 vim.opt.runtimepath:remove '/usr/share/vim/vimfiles' -- Separate Vim plugins from Neovim in case Vim still in use (default: includes this path if Vim is installed)
 
 -- Remove 'r' and 'o' from formatoptions globally
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = '*',
   callback = function()
-    vim.opt_local.formatoptions:remove({ "r", "o" })
+    vim.opt_local.formatoptions:remove { 'r', 'o' }
   end,
 })
 
+vim.opt.winborder = 'rounded'
 
-vim.opt.winborder="rounded"
+-- Sync changes outside of nvim
+vim.opt.autoread = true
+
+vim.opt.cursorline = true

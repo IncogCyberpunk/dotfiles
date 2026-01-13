@@ -25,7 +25,7 @@ alias awk="gawk"
 # System
 # -----------------------------------------------------
 alias -g update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg' # -g flag to make the alias global i.e. make it available in all shell sessions, including non-interactive shells and scripts
-alias sit="sudoedit"
+alias svim="sudo -E nvim"
 alias df="duf"
 # -----------------------------------------------------
 # Mount

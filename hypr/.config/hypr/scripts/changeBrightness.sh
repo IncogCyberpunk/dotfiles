@@ -12,7 +12,7 @@ iconsDir="$HOME/.config/swaync/icons"
 getBrightnessPercentage() {
     currentValue=$(brightnessctl g)
     maxValue=$(brightnessctl m)
-    percentage=$(echo "scale=2; $currentValue / $maxValue * 100" | bc)
+    percentage=$(lua -e "print($currentValue/$maxValue * 100)") # Now, using Lua for calculations  instead of relying on bc
     percentage=${percentage%.*}
     echo "$percentage"
 }

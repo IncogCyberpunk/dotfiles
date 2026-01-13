@@ -39,7 +39,7 @@ vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 -- Buffers
 -- vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 -- vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-vim.keymap.set({'n','t'}, '<leader>x', ':bdelete!<CR>', opts) -- close buffer
+vim.keymap.set({ 'n', 't' }, '<leader>x', ':bdelete!<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Window management
@@ -76,15 +76,17 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnos
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
-
 -- Keymap to copy and paste to system clipboard
-vim.keymap.set('n', '<leader>up','"+', { desc = 'Use the [U]named [P]lus Register i.e. system clipboard' })
+vim.keymap.set('n', '<leader>up', '"+', { desc = 'Use the [U]named [P]lus Register i.e. system clipboard' })
 
 -- Undo all changes to the file and revert to the last write state to the file
-vim.keymap.set('n','<leader>ud',":e!<CR>", { desc = "Undo all changes to the file since the last write."})
+vim.keymap.set('n', '<leader>ud', ':e!<CR>', { desc = 'Undo all changes to the file since the last write.' })
 
 -- Keymap to open a terminal
-vim.keymap.set('n','<leader>te',':terminal<CR>',{desc= "Open a new terminal in a tab"})
+vim.keymap.set('n', '<leader>te', ':terminal<CR>', { desc = 'Open a new terminal in a tab' })
 
 -- Keymap to check if the file has been modified outside of Neovim
-vim.keymap.set('n','<leader>sy',"<cmd>checktime<CR>",{desc = "Check if the file has been modified outside of Neovim"})
+vim.keymap.set('n', '<leader>sy', '<cmd>checktime<CR>', { desc = 'Check if the file has been modified outside of Neovim' })
+
+-- Keymap to yank whole file
+vim.keymap.set('n', '<leader>ya', '<cmd>%y<CR>', { desc = 'Yank the whole file' })
