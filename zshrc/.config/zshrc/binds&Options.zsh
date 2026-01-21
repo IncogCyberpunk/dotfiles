@@ -45,5 +45,7 @@ zle -N zle-line-init
 
 # Allow comments 
 setopt interactivecomments
-setopt AUTO_CD
+
+setopt autocd
 setopt CORRECT
+setopt extendedglob

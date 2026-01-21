@@ -28,8 +28,10 @@ return {
       'cpptools', -- C/C++/Rust debugger
       'cpplint', -- C/C++ linter
       'eslint_d', -- JS/TS linter
+      'texlab', -- LaTeX LSP server
     }
 
+    -- NOTE: Below this line, we define helper functions to install the tools if not already installed
     local function install_tool(package)
       package:install(nil, function(success)
         vim.schedule(function()
