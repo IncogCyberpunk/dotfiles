@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# NOTE: RUN ALL THE BELOW COMMANDS ENCLOSED INSIDE -c in zsh (I.E. SINGLE LINE COMMAND) USING wezterm --start -- zsh -c " "
+# NOTE: RUN ALL THE BELOW COMMANDS ENCLOSED INSIDE -c in zsh (I.E. SINGLE LINE COMMAND) 
 # NOTE: start of the command
-wezterm start -- zsh -c '
+nohup ghostty -e zsh -c '
 
 # NOTE: If the backslash appears at the end of a line (with no characters, including no spaces, after it), it tells the shell to ignore the newline character that follows, effectively continuing the command onto the next line. 
 # NOTE: ; => used to perform command chaining in tmux, \; => used to escape the ; character
@@ -11,7 +11,8 @@ wezterm start -- zsh -c '
 tmux new -d -s Configs -n NvimConfigs -c "$HOME/.config/nvim/" "nvim $HOME/.config/nvim/init.lua"  \; \
     neww -n HyprConfigs -c "$HOME/.config/hypr/" "nvim $HOME/.config/hypr/hyprland.conf" \;  \
     neww -n TmuxConfigs -c "$HOME/.config/tmux/" "nvim $HOME/.config/tmux/tmux.conf" \; \
-    neww -n WeztermConfigs -c "$HOME/.config/wezterm/" "nvim $HOME/.config/wezterm/wezterm.lua";
+    neww -n GhosttyConfigs -c "$HOME/.config/ghostty/" "nvim $HOME/.config/ghostty/config";
+
 
 tmux neww -t Configs \; \
     a -t Configs \; \

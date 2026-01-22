@@ -9,9 +9,9 @@ if (pgrep spotify > /dev/null) ; then
     if (hyprctl activewindow | grep -v grep | grep -iw spotify > /dev/null) ; then
         hyprctl dispatch killactive
     else
-        spotify
+        spotify-launcher
     fi
 else
-    hyprctl dispatch exec "[workspace 4 silent] spotify"
+    hyprctl dispatch exec "[workspace 4 silent] spotify-launcher"
 fi
 

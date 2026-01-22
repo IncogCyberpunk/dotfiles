@@ -20,3 +20,5 @@ window-decoration = true
 keybind = alt+enter=unbind
 
 confirm-close-surface = false
+quit-after-last-window-closed = true
+quit-after-last-window-closed-delay = 5m

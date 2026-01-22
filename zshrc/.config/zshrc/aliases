@@ -109,3 +109,4 @@ alias nepdate='~/sysScripts/fetchNepaliDate.sh'
 pkgwho(){
     sudo pacman -Qo $(which $1)
 }
+alias spotx="bash <(curl -sSL https://spotx-official.github.io/run.sh) -f"
