@@ -19,13 +19,15 @@ getBrightnessPercentage() {
 
 # Get Icons
 getIcon(){
-    if [[ $(getBrightnessPercentage) -le "20" ]]; then
+    local percentage=$1
+    
+    if [[ $percentage -le 20 ]]; then
         icon="$iconsDir/brightness-20.png"
-    elif [[ $(getBrightnessPercentage) -le "40" ]]; then
+    elif [[ $percentage -le 40 ]]; then
         icon="$iconsDir/brightness-40.png"
-    elif [[ $(getBrightnessPercentage) -le "60" ]]; then
+    elif [[ $percentage -le 60 ]]; then
         icon="$iconsDir/brightness-60.png"
-    elif [[ $(getBrightnessPercentage) -le "80" ]]; then
+    elif [[ $percentage -le 80 ]]; then
         icon="$iconsDir/brightness-80.png"
     else
         icon="$iconsDir/brightness-100.png"
@@ -48,8 +50,11 @@ if [[ $1 == "increase" ]]; then
     # Apply new brightness
     brightnessctl set "${targetPercentage}%"
 
+    # Get icon based on target percentage
+    icon=$(getIcon "$targetPercentage")
+
     # Notify user
-    notify-send -u low -t 700  -h string:x-canonical-private-synchronous:brightness-notification -h int:value:$targetPercentage -i $(getIcon) "Backlight" "${targetPercentage}%" 
+    notify-send -u low -t 700  -h string:x-canonical-private-synchronous:brightness-notification -h int:value:$targetPercentage -i $icon "Backlight" "${targetPercentage}%" 
 
 elif [[ $1 == "decrease" ]]; then
     # Calculate current and target brightness
@@ -60,15 +65,22 @@ elif [[ $1 == "decrease" ]]; then
     if (( targetPercentage < 10 )); then
         targetPercentage=10
         brightnessctl set "${targetPercentage}%"
-        notify-send -u low -t 700 -h string:x-canonical-private-synchronous:brightness-notification -h int:value:$targetPercentage "Minimum brightness reached!" "Brightness: ${targetPercentage}%" 
+        
+        # Get icon for minimum brightness
+        icon=$(getIcon "$targetPercentage")
+        
+        notify-send -u low -t 700 -h string:x-canonical-private-synchronous:brightness-notification -h int:value:$targetPercentage -i $icon "Minimum brightness reached!" "Brightness: ${targetPercentage}%" 
         exit
     fi
 
     # Apply new brightness
     brightnessctl set "${targetPercentage}%"
 
+    # Get icon based on target percentage
+    icon=$(getIcon "$targetPercentage")
+
     # Notify user
-    notify-send -u low -t 700 -h string:x-canonical-private-synchronous:brightness-notification -h int:value:$targetPercentage -i $(getIcon) "Backlight" "${targetPercentage}%" 
+    notify-send -u low -t 700 -h string:x-canonical-private-synchronous:brightness-notification -h int:value:$targetPercentage -i $icon "Backlight" "${targetPercentage}%" 
 
 else
     echo "Usage: $0 {increase|decrease}"
