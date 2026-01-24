@@ -42,16 +42,19 @@ getSourceVolumePercentage(){
 iconsDir="$HOME/.config/swaync/icons"
 # Get Icons
 getIcon(){
-    if [[ $1 == "sink" ]]; then
-        if [[ $(getSinkVolumePercentage) -le "35" ]]; then
+    local type=$1
+    local volume=$2
+    
+    if [[ $type == "sink" ]]; then
+        if [[ $volume -le 35 ]]; then
             icon="$iconsDir/volume-low.png"
-        elif [[ $(getSinkVolumePercentage) -le "70" ]]; then
+        elif [[ $volume -le 70 ]]; then
             icon="$iconsDir/volume-mid.png"
         else
             icon="$iconsDir/volume-high.png"
         fi
-    elif [[ $1 == "source" ]]; then
-        if wpctl get-volume @DEFAULT_SOURCE@ | grep -iq "MUTED"; then
+    elif [[ $type == "source" ]]; then
+        if [[ $volume -eq 0 ]]; then
             icon="$iconsDir/block-microphone.png"
         else
             icon="$iconsDir/microphone.png"
@@ -63,10 +66,13 @@ getIcon(){
 
 # Exhibit volume notification OSD
 sendNotification(){
-if [[ $(getSinkVolumePercentage) -gt 100 ]]; then
-    notify-send -u low -t 700 -h string:x-canonical-private-synchronous:volume-notification -h int:value:$(getSinkVolumePercentage) -i $(getIcon sink) "Volume (Amplified)" "$(getSinkVolumePercentage)%" 
+    local volume=$1
+    local icon=$2
+    
+if [[ $volume -gt 100 ]]; then
+    notify-send -u low -t 700 -h string:x-canonical-private-synchronous:volume-notification -h int:value:$volume -i $icon "Volume (Amplified)" "${volume}%" 
 else
-    notify-send -u low -t 700 -h string:x-canonical-private-synchronous:volume-notification  -h int:value:$(getSinkVolumePercentage) -i $(getIcon sink) "Volume" "$(getSinkVolumePercentage)%" 
+    notify-send -u low -t 700 -h string:x-canonical-private-synchronous:volume-notification  -h int:value:$volume -i $icon "Volume" "${volume}%" 
 fi
 }
 
@@ -74,33 +80,54 @@ fi
 # Increase volume
 if [[ $1 == "increase" ]]; then
     wpctl set-volume @DEFAULT_SINK@ 5%+
-    sendNotification
+    
+    # Cache values ONCE
+    volume=$(getSinkVolumePercentage)
+    icon=$(getIcon sink "$volume")
+    
+    sendNotification "$volume" "$icon"
 
 # Decrease volume
 elif [[ $1 == "decrease" ]]; then
     wpctl set-volume @DEFAULT_SINK@ 5%-
-    sendNotification
+    
+    # Cache values ONCE
+    volume=$(getSinkVolumePercentage)
+    icon=$(getIcon sink "$volume")
+    
+    sendNotification "$volume" "$icon"
 
 # Toggle mute 
 elif [[ $1 == "toggle-mute" ]]; then
     wpctl set-mute @DEFAULT_SINK@ toggle
+    
+    # Cache the mute check result
+    volume_output=$(wpctl get-volume @DEFAULT_SINK@)
 
-    if wpctl get-volume @DEFAULT_SINK@ | grep -iq "muted" ; then
+    if grep -iq "muted" <<< "$volume_output"; then
         notify-send -u low -t 700 -h string:x-canonical-private-synchronous:volume-notification -i $iconsDir/volume-mute.png  "Muted" 
     else
-        notify-send -u low -t 700 -h string:x-canonical-private-synchronous:volume-notification -h int:value:$(getSinkVolumePercentage) -i $(getIcon sink)  "Unmuted" "$(getSinkVolumePercentage)%"
+        volume=$(getSinkVolumePercentage)
+        icon=$(getIcon sink "$volume")
+        notify-send -u low -t 700 -h string:x-canonical-private-synchronous:volume-notification -h int:value:$volume -i $icon  "Unmuted" "${volume}%"
     fi
 
 # Toggle microphone mute
 elif [[ $1 == "toggle-mic" ]]; then
     wpctl set-mute @DEFAULT_SOURCE@ toggle
+    
+    # Cache the mute check result
+    volume_output=$(wpctl get-volume @DEFAULT_SOURCE@)
 
-    if wpctl get-volume @DEFAULT_SOURCE@ | grep -iq "MUTED"; then
+    if grep -iq "MUTED" <<< "$volume_output"; then
         status="MUTED"
     else
         status="UNMUTED"
     fi
+    
+    source_vol=$(getSourceVolumePercentage)
+    icon=$(getIcon source "$source_vol")
 
-    notify-send -u low -t 700 -h string:x-canonical-private-synchronous:mic-status -h int:value:$(getSourceVolumePercentage) -i $(getIcon source)   "Microphone Status" $status 
+    notify-send -u low -t 700 -h string:x-canonical-private-synchronous:mic-status -h int:value:$source_vol -i $icon   "Microphone Status" $status 
 fi
 
