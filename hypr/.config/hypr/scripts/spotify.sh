@@ -1,4 +1,4 @@
-#/usr/bin/bash
+!#/usr/bin/env bash
 
 # supress output by `> /dev/null` which redirects the std. o/p to /dev/null
 
@@ -9,9 +9,11 @@ if (pgrep spotify > /dev/null) ; then
     if (hyprctl activewindow | grep -v grep | grep -iw spotify > /dev/null) ; then
         hyprctl dispatch killactive
     else
-        spotify-launcher
+        spotify
     fi
 else
-    hyprctl dispatch exec "[workspace 4 silent] spotify-launcher"
+    hyprctl dispatch exec spotify
+    sleep 1.5
+    hyprctl dispatch  movetoworkspacesilent 4
 fi
 

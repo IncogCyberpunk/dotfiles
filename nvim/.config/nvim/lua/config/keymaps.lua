@@ -16,9 +16,6 @@ vim.keymap.set('n', '<C-s>', '<cmd> w <CR>', opts)
 -- save file without auto-formatting
 vim.keymap.set('n', '<leader>sn', '<cmd>noautocmd w <CR>', opts)
 
--- quit file
-vim.keymap.set('n', '<C-q>', '<cmd> q <CR>', opts)
-
 -- delete single character without copying into register by making use of the black hole register
 vim.keymap.set('n', 'x', '"_x', opts)
 
@@ -37,8 +34,6 @@ vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 
 -- Buffers
--- vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
--- vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
 vim.keymap.set({ 'n', 't' }, '<leader>x', ':bdelete!<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
@@ -73,11 +68,8 @@ vim.keymap.set('v', 'p', '"_dP', opts)
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>dg', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
-
--- Keymap to copy and paste to system clipboard
-vim.keymap.set('n', '<leader>up', '"+', { desc = 'Use the [U]named [P]lus Register i.e. system clipboard' })
 
 -- Undo all changes to the file and revert to the last write state to the file
 vim.keymap.set('n', '<leader>ud', ':e!<CR>', { desc = 'Undo all changes to the file since the last write.' })
@@ -89,4 +81,10 @@ vim.keymap.set('n', '<leader>te', ':terminal<CR>', { desc = 'Open a new terminal
 vim.keymap.set('n', '<leader>sy', '<cmd>checktime<CR>', { desc = 'Check if the file has been modified outside of Neovim' })
 
 -- Keymap to yank whole file
-vim.keymap.set('n', '<leader>ya', '<cmd>%y<CR>', { desc = 'Yank the whole file' })
+vim.keymap.set('n', '<leader>ya', '<cmd>%y<CR>', { desc = 'Yank the whole file', noremap = true })
+
+-- Keymap to yank whole file
+vim.keymap.set('n', '<leader>da', '<cmd>%d<CR>', { desc = 'Delete the whole file', noremap = true })
+
+-- Keymap to yank whole file
+vim.keymap.set('n', '<leader>ca', '<cmd>%c<CR>', { desc = 'Change the whole file', noremap = true })
