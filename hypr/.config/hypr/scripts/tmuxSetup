@@ -2,7 +2,7 @@
 
 # NOTE: RUN ALL THE BELOW COMMANDS ENCLOSED INSIDE -c in zsh (I.E. SINGLE LINE COMMAND) 
 # NOTE: start of the command
-nohup ghostty -e zsh -c '
+ghostty -e zsh -c '
 
 # NOTE: If the backslash appears at the end of a line (with no characters, including no spaces, after it), it tells the shell to ignore the newline character that follows, effectively continuing the command onto the next line. 
 # NOTE: ; => used to perform command chaining in tmux, \; => used to escape the ; character

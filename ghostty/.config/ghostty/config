@@ -9,15 +9,11 @@ font-size = 11.5
 # --- Visuals ---
 theme = Catppuccin Mocha
 
-# --- Window Geometry ---
-window-width = 120
-window-height = 28
-# Ghostty hides the tab bar by default if only one tab exists
-# but you can ensure native decorations are handled:
-window-decoration = true
+window-padding-y = 6,10
 
 # --- Keybindings ---
 keybind = alt+enter=unbind
+keybind = ctrl+enter=unbind
 
 confirm-close-surface = false
 quit-after-last-window-closed = true
