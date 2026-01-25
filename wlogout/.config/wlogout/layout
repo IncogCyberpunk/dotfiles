@@ -7,7 +7,7 @@
 }
 {
     "label" : "logout",
-    "action" : "killall Hyprland || hyprctl dispatch exit || pkill Hyprland",
+    "action" : "hyprctl dispatch exit",
     "text" : "Logout",
     "keybind" : "o"
     "circular" :true,
