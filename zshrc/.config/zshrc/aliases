@@ -109,4 +109,14 @@ alias nepdate='~/sysScripts/fetchNepaliDate.sh'
 pkgwho(){
     sudo pacman -Qo $(which $1)
 }
+
+# Run the spotx-bash script
 alias spotx="bash <(curl -sSL https://spotx-official.github.io/run.sh) -f"
+
+# Get random rejection reasons
+alias no-reason='curl naas.isalman.dev/no'
+
+# Get random breaking bad quote
+function bb-quote(){
+    curl -s https://api.breakingbadquotes.xyz/v1/quotes | jq -r '.[] | "\"\(.quote)\" -- \(.author)"'
+}
