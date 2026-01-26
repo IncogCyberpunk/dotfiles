@@ -98,7 +98,7 @@ elif [[ $1 == "decrease" ]]; then
     sendNotification "$volume" "$icon"
 
 # Toggle mute 
-elif [[ $1 == "toggle-mute" ]]; then
+elif [[ $1 == "toggle-sink" ]]; then
     wpctl set-mute @DEFAULT_SINK@ toggle
     
     # Cache the mute check result
@@ -113,7 +113,7 @@ elif [[ $1 == "toggle-mute" ]]; then
     fi
 
 # Toggle microphone mute
-elif [[ $1 == "toggle-mic" ]]; then
+elif [[ $1 == "toggle-source" ]]; then
     wpctl set-mute @DEFAULT_SOURCE@ toggle
     
     # Cache the mute check result
