@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+## Rofi   : Launcher (Modi Drun, Run, File Browser, Window)
+#
+## Available Styles
+#
+## style-1     style-2     style-3     style-4     style-5
+## style-6     
+
+dir="$HOME/.config/rofi/launchers/"
+theme='style-1'
+
+## Run
+rofi \
+    -show drun \
+    -theme ${dir}/${theme}.rasi

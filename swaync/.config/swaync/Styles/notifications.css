@@ -15,8 +15,8 @@
   color: @text;
 
   all: unset;
-  font-size: 14px;
-  font-family: "JetBrains Mono Nerd Font 10";
+  font-size: 16px;
+  font-family: "JetBrains Mono Nerd Font";
   transition: 200ms;
 
 }
@@ -37,7 +37,7 @@
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
-  padding: 6px;
+  padding: 2px;
   border-radius: 12px;
 }
 
@@ -80,7 +80,7 @@
 }
 
 .body {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .floating-notifications.background .notification-row .notification-background .close-button {
