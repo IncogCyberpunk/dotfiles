@@ -29,6 +29,7 @@ return {
       'cpplint', -- C/C++ linter
       'eslint_d', -- JS/TS linter
       'texlab', -- LaTeX LSP server
+      'bash-language-server', -- LSP server that provides LSP for PKGBUILD, makepkg.conf
     }
 
     -- NOTE: Below this line, we define helper functions to install the tools if not already installed
