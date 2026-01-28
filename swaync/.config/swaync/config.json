@@ -5,7 +5,7 @@
 	"cssPriority": "user",
 
   "control-center-width": 380,
-  "control-center-height": 860, 
+  "control-center-height": 900, 
   "control-center-margin-top": 2,
   "control-center-margin-bottom": 2,
   "control-center-margin-right": 1,
@@ -18,7 +18,7 @@
 
   "timeout": 4,
   "timeout-low": 2,
-  "timeout-critical": 6,
+  "timeout-critical": 0,
   
   "fit-to-screen": false,
   "keyboard-shortcuts": true,
@@ -53,7 +53,7 @@
     "title": {
       "text": "Notifications",
       "clear-all-button": true,
-      "button-text": "Clear All "
+      "button-text": "Clear All"
     },
     "dnd": {
       "text": "Do not disturb",
