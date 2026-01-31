@@ -1,6 +1,6 @@
 [Default]
 
-save_dir=$HOME/Pictures/Screenshots/lambdaFunctions/
+save_dir=$HOME/Pictures/Screenshots
 save_filename_format=ss-%Y%m%d-%H%M%S.png
 show_panel=true 
 line_size=2
