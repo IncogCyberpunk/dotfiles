@@ -97,14 +97,15 @@ window#waybar {
 
 tooltip {
     border-radius: 16px;
-    background-color: @backgroundlight;
-    opacity: 0.9;
+    opacity: 1;
+        font-size: 16px;
+    background-color: @base;
     padding: 20px;
-    margin: 0px;
+        margin-top: 5px;
 }
 
 tooltip label {
-    color: @textcolor2;
+    color: @text;
 }
 
 /* -----------------------------------------------------
@@ -219,7 +220,6 @@ Group/tools
     font-size: 15px;
     color: @textcolor;
 }
-
 /* -----------------------------------------------------
  * Backlight
  * ----------------------------------------------------- */
