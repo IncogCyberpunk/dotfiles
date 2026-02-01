@@ -107,7 +107,7 @@ alias nepdate='~/sysScripts/fetchNepaliDate.sh'
 
 # Search who provides the command in Arch Linux 
 pkgwho(){
-    sudo pacman -Qo $(which $1)
+    pacman -Qo $(which $1)
 }
 
 # Run the spotx-bash script
