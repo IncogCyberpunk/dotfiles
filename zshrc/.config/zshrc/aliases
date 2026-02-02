@@ -110,6 +110,11 @@ pkgwho(){
     pacman -Qo $(which $1)
 }
 
+# Find which package provides a file
+findpkg(){
+    pacman -F $1
+}
+
 # Run the spotx-bash script
 alias spotx="bash <(curl -sSL https://spotx-official.github.io/run.sh) -f"
 

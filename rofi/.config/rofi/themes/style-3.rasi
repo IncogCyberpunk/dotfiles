@@ -47,7 +47,7 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       800px;
+    width:                       1000px;
     x-offset:                    0px;
     y-offset:                    0px;
 
@@ -95,11 +95,11 @@ inputbar {
     border-color:                @border-colour;
     background-color:            @alternate-background;
     text-color:                  @foreground-colour;
-    children:                    [ "textbox-prompt-colon", "entry" ];
+    children:                    [ "prompt","textbox-prompt-colon", "entry" ];
 }
 
 prompt {
-    enabled:                     true;
+    enabled:                     false;
     background-color:            inherit;
     text-color:                  inherit;
 }
@@ -301,4 +301,9 @@ error-message {
     border-color:                @border-colour;
     background-color:            @background-colour;
     text-color:                  @foreground-colour;
+}
+
+/*****----- Message -----*****/
+#dmenu prompt{
+    enabled: true;
 }
