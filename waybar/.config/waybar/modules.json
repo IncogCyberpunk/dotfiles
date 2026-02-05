@@ -124,6 +124,7 @@
   "clock": {
     "format": "{:%H:%M %a %b-%d}",
     "tooltip-format": "{calendar}",
+    "on-click":"~/sysScripts/fetchNepaliDate.sh",
     "calendar": {
                   "mode"          : "year",
                   "mode-mon-col"  : 4,

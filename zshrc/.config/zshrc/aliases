@@ -78,7 +78,9 @@ function spkg(){
 }
 
 # NOTE: -r flag in xargs to exit if std. input is empty , -o flag to reopen stdin as /dev/tty in child processes before executing the command , which is useful for running interactive applications
-alias rpkg='pacman -Qq | fzf -m | xargs -or sudo pacman -Rns' 
+alias rpkg='pacman -Qq | fzf -m | xargs -or sudo pacman -R' 
+
+alias rpkgdeps='pacman -Qq | fzf -m | xargs -or sudo pacman -Rns' 
 
 sfile(){
     fzf -m | xargs -or ls -l
