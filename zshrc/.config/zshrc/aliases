@@ -9,18 +9,9 @@ alias ff='fastfetch'
 alias -g ls="eza  --all --icons=always"
 alias -g ll='eza -al --icons=always --group'
 alias -g lt='eza -a --tree --level=1 --icons=always '
-alias n='$EDITOR'
-alias -g vim='$EDITOR'
-alias wifi='nmtui'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-
-alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}'
-alias egrep='grep -E'
-alias fgrep='grep -F'
 alias cat="bat"
-alias awk="gawk"
 
+alias vim="nvim"
 # -----------------------------------------------------
 # System
 # -----------------------------------------------------
@@ -38,19 +29,6 @@ alias mall='sudo mount -a'
 
 # Reflector Alias to sort mirrors from Nepal and India and sort them by rate and save them to /etc/pacman.d/mirrorlist
 alias rsort='sudo reflector --sort rate --country Nepal,India --save /etc/pacman.d/mirrorlist'
-
-# Git Aliases
-alias gis="git status"
-alias gia="git add ."
-alias gic="git commit -m"
-alias gip="git push origin -u main"
-
-# NPM Aliases
-alias ndev="npm run dev"
-alias nser="npm run server"
-
-# Aliases for zen browser
-alias zen='zen-browser --search'
 
 # Alias for killing hyprland
 alias killhyp='killall Hyprland || pkill Hyprland'
@@ -127,3 +105,6 @@ alias no-reason='curl naas.isalman.dev/no'
 function bb-quote(){
     curl -s https://api.breakingbadquotes.xyz/v1/quotes | jq -r '.[] | "\"\(.quote)\" -- \(.author)"'
 }
+
+# Show the wifi password and generate QR code for it
+alias wifiqr="nmcli device wifi show-password"
