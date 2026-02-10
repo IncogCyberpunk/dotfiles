@@ -1,0 +1,9 @@
+[general]
+initial-tool = "brush"
+output-filename = "~/Pictures/Screenshots/ss-%Y%m%d_%H%M%S.png"
+copy-command="wl-copy"
+
+[font]
+family = "JetBrains Mono Nerd Font Propo"
+style = "Regular"
+
